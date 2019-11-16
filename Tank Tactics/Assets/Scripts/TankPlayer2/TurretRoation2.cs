@@ -13,11 +13,11 @@ public class TurretRoation2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.K))
+        if (Input.GetKey(KeyCode.Joystick1Button9))
         {
             transform.Rotate(-Vector3.forward, 100 * Time.deltaTime);
         }
-        else if (Input.GetKey(KeyCode.L))
+        else if (Input.GetKey(KeyCode.Joystick1Button9))
             transform.Rotate(Vector3.forward, 100 * Time.deltaTime);
     }
 }

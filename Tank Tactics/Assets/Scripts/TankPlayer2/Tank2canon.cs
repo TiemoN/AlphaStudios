@@ -11,7 +11,7 @@ public class Tank2canon : MonoBehaviour
     void Update()
     {
         cooldown = cooldown - Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1))
         {
             if (cooldown <= 0)
             {
