@@ -23,8 +23,8 @@ public class PowerUp2 : MonoBehaviour
         // Grafik Effekt wenn Objekt aufgenommen wird
         Instantiate(pickupEffect, transform.position, transform.rotation);
         // PowerUp Effekt für den Spieler
-        TankMovement stats = player.GetComponent<TankMovement>();
-            stats.m_Speed *= multiplier;
+        Tank1 stats = player.GetComponent<Tank1>();
+            stats.speed *= multiplier;
 
         // Wait x amount of seconds
 
