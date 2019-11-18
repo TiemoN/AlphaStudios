@@ -25,6 +25,13 @@ public class PowerUp2 : MonoBehaviour
         // PowerUp Effekt für den Spieler
         TankMovement stats = player.GetComponent<TankMovement>();
             stats.m_Speed *= multiplier;
+
+        // Wait x amount of seconds
+
+
+        // Reverse the effect on our player
+        //stats.m_Speed /= multiplier;
+
         // Entfernt PowerUp Objekt
         Destroy(gameObject);
     }
