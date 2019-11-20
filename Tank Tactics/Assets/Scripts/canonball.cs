@@ -11,7 +11,7 @@ public class canonball : MonoBehaviour
     {
         rb.AddRelativeForce(Vector3.forward * speed);
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionExit(Collision collision)
     {
         if (bounce)
         {
