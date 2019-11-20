@@ -237,7 +237,7 @@ BoxCollider:
   m_GameObject: {fileID: 8296172667401074090}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.9068718, y: 1.078269, z: 2.539136}
   m_Center: {x: -0.016633987, y: 0.52032423, z: -0.010432005}
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df47747a8fd98124e98a9dd6accad0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplier: 1
+  multiplier: 2
   pickupEffect: {fileID: 110129572646674978, guid: b7b902f6b758b4844855aa7f1f30aca5,
     type: 3}
 --- !u!135 &425023006
