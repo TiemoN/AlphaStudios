@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lives : MonoBehaviour
 {
-    public float lives;
+    public int lives;
 
     private void OnTriggerEnter(Collider other)
     {

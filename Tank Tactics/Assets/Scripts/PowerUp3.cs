@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PowerUp3 : MonoBehaviour
 {
-    public float multiplier = 1.0f;
 
     public GameObject pickupEffect;
 
@@ -24,7 +23,7 @@ public class PowerUp3 : MonoBehaviour
         Instantiate(pickupEffect, transform.position, transform.rotation);
         // PowerUp Effekt für den Spieler
         Lives stats = player.GetComponent<Lives>();
-        stats.lives *= multiplier;
+        stats.lives++;
 
         // Wait x amount of seconds
 
