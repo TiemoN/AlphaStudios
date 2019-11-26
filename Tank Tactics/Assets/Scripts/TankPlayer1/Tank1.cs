@@ -9,7 +9,7 @@ public class Tank1 : MonoBehaviour
     [Tooltip("Defines the speed multiplier")]
     [Header("Player Movement Settings")]
     public float speed;
-    [Range(1.0f, 50.0f)]
+    [Range(1.0f, 100.0f)]
     [Tooltip("Defines the rotspeed multiplier")]
     public float rotspeed;
 
