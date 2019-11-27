@@ -12,11 +12,45 @@ public class Tank1 : MonoBehaviour
     [Range(1.0f, 100.0f)]
     [Tooltip("Defines the rotspeed multiplier")]
     public float rotspeed;
+    public bool advancedControl;
+    float winkel;
 
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Input.GetAxis("P1Vertical") * Time.deltaTime);
-        transform.Rotate(Vector3.down * rotspeed * Input.GetAxis("P1Horizontal") * Time.deltaTime);
-        Tanktop.transform.Rotate(Vector3.back * rotspeed * Input.GetAxis("P1HorizontalRight") * Time.deltaTime);
+        if (advancedControl)
+        {
+            transform.Translate(Vector3.forward * speed * Input.GetAxis("P1Vertical") * Time.deltaTime);
+            transform.Rotate(Vector3.down * rotspeed * Input.GetAxis("P1Horizontal") * Time.deltaTime);
+            Tanktop.transform.Rotate(Vector3.back * rotspeed * Input.GetAxis("P1HorizontalRight") * Time.deltaTime);
+        }
+        else
+        {
+            if(Input.GetAxis("P1Vertical") != 0 || Input.GetAxis("P1Horizontal") != 0)
+            {
+                winkel = Mathf.Atan2(Input.GetAxis("P1Horizontal"), Input.GetAxis("P1Vertical")) * Mathf.Rad2Deg;
+                if(winkel < 0)
+                {
+                    winkel = winkel + 360;
+                }
+                winkel = 360 - winkel;
+                if(winkel == 360)
+                {
+                    winkel = 0;
+                }
+                if(winkel != this.transform.rotation.y)
+                {
+                    if(winkel - this.transform.rotation.y <= 0)
+                    {
+                        transform.Rotate(Vector3.down * -rotspeed * Time.deltaTime);
+                    }
+                    else
+                    {
+                        transform.Rotate(Vector3.down * rotspeed * Time.deltaTime);
+                    }
+                }
+            }
+        }
     }
+    //steuerung nicht relativ machen
+    //items mariokart
 }

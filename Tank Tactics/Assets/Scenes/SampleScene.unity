@@ -1701,6 +1701,7 @@ MonoBehaviour:
   Tanktop: {fileID: 9177135291723264377}
   speed: 5
   rotspeed: 100
+  advancedControl: 1
 --- !u!4 &8422961967112191251
 Transform:
   m_ObjectHideFlags: 0
