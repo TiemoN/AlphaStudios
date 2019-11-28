@@ -17,4 +17,9 @@ public class Lives : MonoBehaviour
             }
         }
     }
+
+    void Live()
+    {
+        lives++;
+    }
 }

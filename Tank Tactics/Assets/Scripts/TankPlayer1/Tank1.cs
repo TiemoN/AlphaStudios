@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class Tank1 : MonoBehaviour
 {
-    public GameObject Tanktop;
-    [Range(1.0f, 10.0f)]
-    [Tooltip("Defines the speed multiplier")]
-    [Header("Player Movement Settings")]
+    public GameObject Tanktop, Canon;
     public float speed;
-    [Range(1.0f, 100.0f)]
-    [Tooltip("Defines the rotspeed multiplier")]
     public float rotspeed;
     public bool advancedControl;
     float winkel;
+    int powerup = -1;
 
     void Update()
     {
@@ -33,13 +29,9 @@ public class Tank1 : MonoBehaviour
                     winkel = winkel + 360;
                 }
                 winkel = 360 - winkel;
-                if(winkel == 360)
+                if(winkel != this.transform.eulerAngles.y && !(winkel -10 < this.transform.eulerAngles.y && winkel > this.transform.eulerAngles.y) && !(winkel +10 > this.transform.eulerAngles.y && winkel < this.transform.eulerAngles.y))
                 {
-                    winkel = 0;
-                }
-                if(winkel != this.transform.rotation.y)
-                {
-                    if(winkel - this.transform.rotation.y <= 0)
+                    if(this.transform.eulerAngles.y - winkel -1 < 0)
                     {
                         transform.Rotate(Vector3.down * -rotspeed * Time.deltaTime);
                     }
@@ -48,9 +40,53 @@ public class Tank1 : MonoBehaviour
                         transform.Rotate(Vector3.down * rotspeed * Time.deltaTime);
                     }
                 }
+                else
+                {
+                    transform.Translate(Vector3.forward * Time.deltaTime * speed);
+                }
+            }
+        }
+
+
+        if (Input.GetAxis("P1LeftTrigger") != 0)
+        {
+            switch (powerup)
+            {
+                //speed
+                case 0:
+                    StartCoroutine("Speedboost");
+                    break;
+                //live
+                case 1:
+                    this.gameObject.SendMessage("Live");
+                    break;
+                case 2:
+                    Canon.SendMessage("Multishot");
+                    break;
+            }
+            powerup = -1;
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Item"))
+        {
+            Destroy(other.gameObject);
+            if (powerup == -1)
+            {
+                powerup = Random.Range(0, 3);
+                Debug.Log(powerup);
             }
         }
     }
-    //steuerung nicht relativ machen
-    //items mariokart
+
+    IEnumerator Speedboost()
+    {
+        speed = speed * 2;
+        yield return new WaitForSeconds(5);
+        speed = speed / 2;
+
+    }
+
+
 }
