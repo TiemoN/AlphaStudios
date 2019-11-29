@@ -29,9 +29,10 @@ public class Tank1 : MonoBehaviour
                     winkel = winkel + 360;
                 }
                 winkel = 360 - winkel;
+
                 if(winkel != this.transform.eulerAngles.y && !(winkel -10 < this.transform.eulerAngles.y && winkel > this.transform.eulerAngles.y) && !(winkel +10 > this.transform.eulerAngles.y && winkel < this.transform.eulerAngles.y))
                 {
-                    if(this.transform.eulerAngles.y - winkel -1 < 0)
+                    if((this.transform.eulerAngles.y - winkel < 0 || this.transform.eulerAngles.y - winkel > 180) && this.transform.eulerAngles.y - winkel > -180)
                     {
                         transform.Rotate(Vector3.down * -rotspeed * Time.deltaTime);
                     }
@@ -43,6 +44,32 @@ public class Tank1 : MonoBehaviour
                 else
                 {
                     transform.Translate(Vector3.forward * Time.deltaTime * speed);
+                }
+            }
+
+
+
+            if (Input.GetAxis("P1VerticalRight") != 0 || Input.GetAxis("P1HorizontalRight") != 0)
+            {
+                winkel = Mathf.Atan2(Input.GetAxis("P1HorizontalRight"), Input.GetAxis("P1VerticalRight")) * Mathf.Rad2Deg;
+                if (winkel < 0)
+                {
+                    winkel = winkel + 360;
+                }
+                winkel = 360 - winkel;
+
+                Debug.Log(Tanktop.transform.eulerAngles.y);
+
+                if (winkel != Tanktop.transform.eulerAngles.y && !(winkel - 10 < Tanktop.transform.eulerAngles.y && winkel > Tanktop.transform.eulerAngles.y) && !(winkel + 10 > Tanktop.transform.eulerAngles.y && winkel < Tanktop.transform.eulerAngles.y))
+                {
+                    if ((Tanktop.transform.eulerAngles.y - winkel < 0 || Tanktop.transform.eulerAngles.y - winkel > 180) && Tanktop.transform.eulerAngles.y - winkel > -180)
+                    {
+                        Tanktop.transform.Rotate(Vector3.back * -rotspeed * Time.deltaTime);
+                    }
+                    else
+                    {
+                        Tanktop.transform.Rotate(Vector3.back * rotspeed * Time.deltaTime);
+                    }
                 }
             }
         }
