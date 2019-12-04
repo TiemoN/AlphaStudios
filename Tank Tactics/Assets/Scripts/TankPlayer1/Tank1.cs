@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tank1 : MonoBehaviour
 {
-    public GameObject Tanktop, Canon;
+    public GameObject Tanktop, Canon, Bombe;
     public float speed;
     public float rotspeed;
     public bool advancedControl;
@@ -90,6 +90,10 @@ public class Tank1 : MonoBehaviour
                 case 2:
                     Canon.SendMessage("Multishot");
                     break;
+                case 3:
+                    Bombe.transform.position = Vector3.up + Vector3.right + Vector3.back;
+                    Bombe.SetActive(true);
+                    break;
             }
             powerup = -1;
         }
@@ -101,7 +105,7 @@ public class Tank1 : MonoBehaviour
             Destroy(other.gameObject);
             if (powerup == -1)
             {
-                powerup = Random.Range(0, 3);
+                powerup = Random.Range(0, 4);
                 Debug.Log(powerup);
             }
         }

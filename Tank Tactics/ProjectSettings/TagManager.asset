@@ -6,6 +6,7 @@ TagManager:
   tags:
   - canonball
   - Item
+  - Explosion
   layers:
   - Default
   - TransparentFX

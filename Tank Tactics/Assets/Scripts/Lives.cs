@@ -8,7 +8,7 @@ public class Lives : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("canonball"))
+        if (other.gameObject.CompareTag("canonball") || other.gameObject.CompareTag("Explosion"))
         {
             lives--;
             if(lives <= 0)
