@@ -15,7 +15,7 @@ public class BombeP1 : MonoBehaviour
         if (bombe.activeSelf == false && Expllosion.activeSelf == false)
         {
             transform.Translate(Vector3.back * Input.GetAxis("P1VerticalRight") * speed * Time.deltaTime);
-            transform.Translate(Vector3.left * Input.GetAxis("P1HorizontalRight") * speed * Time.deltaTime);
+            transform.Translate(Vector3.right * Input.GetAxis("P1HorizontalRight") * speed * Time.deltaTime);
         }
 
         if(Input.GetAxis("P1LeftTrigger") != 0 && bombe.activeSelf == false && Expllosion.activeSelf == false && lifetime > 1)

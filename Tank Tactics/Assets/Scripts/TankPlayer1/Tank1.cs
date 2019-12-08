@@ -8,7 +8,7 @@ public class Tank1 : MonoBehaviour
     public float speed;
     public float rotspeed;
     public bool advancedControl;
-    float winkel;
+    float winkel, winkel2;
     int powerup = -1;
 
     void Update()
@@ -17,7 +17,7 @@ public class Tank1 : MonoBehaviour
         {
             transform.Translate(Vector3.forward * speed * Input.GetAxis("P1Vertical") * Time.deltaTime);
             transform.Rotate(Vector3.down * rotspeed * Input.GetAxis("P1Horizontal") * Time.deltaTime);
-            Tanktop.transform.Rotate(Vector3.back * rotspeed * Input.GetAxis("P1HorizontalRight") * Time.deltaTime);
+            Tanktop.transform.Rotate(Vector3.up * rotspeed * Input.GetAxis("P1HorizontalRight") * Time.deltaTime);
         }
         else
         {
@@ -51,24 +51,24 @@ public class Tank1 : MonoBehaviour
 
             if (Input.GetAxis("P1VerticalRight") != 0 || Input.GetAxis("P1HorizontalRight") != 0)
             {
-                winkel = Mathf.Atan2(Input.GetAxis("P1HorizontalRight"), Input.GetAxis("P1VerticalRight")) * Mathf.Rad2Deg;
-                if (winkel < 0)
+                winkel2 = Mathf.Atan2(Input.GetAxis("P1VerticalRight"), Input.GetAxis("P1HorizontalRight")) * Mathf.Rad2Deg;
+
+                winkel2 = winkel2 + 90;
+
+                if (winkel2 < 0)
                 {
-                    winkel = winkel + 360;
+                    winkel2 = winkel2 + 360;
                 }
-                winkel = 360 - winkel;
 
-                Debug.Log(Tanktop.transform.eulerAngles.y);
-
-                if (winkel != Tanktop.transform.eulerAngles.y && !(winkel - 10 < Tanktop.transform.eulerAngles.y && winkel > Tanktop.transform.eulerAngles.y) && !(winkel + 10 > Tanktop.transform.eulerAngles.y && winkel < Tanktop.transform.eulerAngles.y))
+                if (winkel2 != Tanktop.transform.eulerAngles.y && !(winkel2 - 10 < Tanktop.transform.eulerAngles.y && winkel2 > Tanktop.transform.eulerAngles.y) && !(winkel2 + 10 > Tanktop.transform.eulerAngles.y && winkel2 < Tanktop.transform.eulerAngles.y))
                 {
-                    if ((Tanktop.transform.eulerAngles.y - winkel < 0 || Tanktop.transform.eulerAngles.y - winkel > 180) && Tanktop.transform.eulerAngles.y - winkel > -180)
+                    if ((Tanktop.transform.eulerAngles.y - winkel2 < 0 || Tanktop.transform.eulerAngles.y - winkel2 > 180) && Tanktop.transform.eulerAngles.y - winkel2 > -180)
                     {
-                        Tanktop.transform.Rotate(Vector3.back * -rotspeed * Time.deltaTime);
+                        Tanktop.transform.Rotate(Vector3.down * -rotspeed * Time.deltaTime);
                     }
                     else
                     {
-                        Tanktop.transform.Rotate(Vector3.back * rotspeed * Time.deltaTime);
+                        Tanktop.transform.Rotate(Vector3.down * rotspeed * Time.deltaTime);
                     }
                 }
             }
