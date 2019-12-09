@@ -100,7 +100,7 @@ public class Tank2 : MonoBehaviour
                 case 4:
                     Mine.transform.position = transform.position;
                     Mine.transform.rotation = transform.rotation;
-                    GameObject NewMineP2 = Instantiate(Mine);
+                    GameObject NewMine = Instantiate(Mine);
                     break;
             }
             powerup = -1;
