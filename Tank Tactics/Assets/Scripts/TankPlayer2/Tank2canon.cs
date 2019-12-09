@@ -15,11 +15,28 @@ public class Tank2canon : MonoBehaviour
         {
             if (cooldown <= 0)
             {
-                canonball.transform.position = transform.position;
-                canonball.transform.rotation = transform.rotation;
-                GameObject NewCanonBall = Instantiate(canonball);
-                cooldown = setcooldown;
+                shoot();
             }
         }
+    }
+    IEnumerator Multishot()
+    {
+        shoot();
+        yield return new WaitForSeconds(0.1f);
+        shoot();
+        yield return new WaitForSeconds(0.1f);
+        shoot();
+        yield return new WaitForSeconds(0.1f);
+        shoot();
+        yield return new WaitForSeconds(0.1f);
+        shoot();
+    }
+
+    void shoot()
+    {
+        canonball.transform.position = transform.position;
+        canonball.transform.rotation = transform.rotation;
+        GameObject NewCanonBall = Instantiate(canonball);
+        cooldown = setcooldown;
     }
 }

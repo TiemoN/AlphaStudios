@@ -87,10 +87,12 @@ public class Tank1 : MonoBehaviour
                 case 1:
                     this.gameObject.SendMessage("Live");
                     break;
+                    //5 schüsse schnell hintereinander
                 case 2:
                     Canon.SendMessage("Multishot");
                     break;
                 case 3:
+                    //bombe
                     Bombe.transform.position = Vector3.up + Vector3.right + Vector3.back;
                     Bombe.SetActive(true);
                     break;
