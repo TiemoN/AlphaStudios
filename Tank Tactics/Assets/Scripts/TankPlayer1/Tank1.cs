@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tank1 : MonoBehaviour
 {
-    public GameObject Tanktop, Canon, Bombe;
+    public GameObject Tanktop, Canon, Bombe, Mine;
     public float speed;
     public float rotspeed;
     public bool advancedControl;
@@ -96,6 +96,12 @@ public class Tank1 : MonoBehaviour
                     Bombe.transform.position = Vector3.up + Vector3.right + Vector3.back;
                     Bombe.SetActive(true);
                     break;
+                    //Mine
+                case 4:
+                    Mine.transform.position = transform.position;
+                    Mine.transform.rotation = transform.rotation;
+                    GameObject NewMineP1 = Instantiate(Mine);
+                    break;
             }
             powerup = -1;
         }
@@ -107,7 +113,7 @@ public class Tank1 : MonoBehaviour
             Destroy(other.gameObject);
             if (powerup == -1)
             {
-                powerup = Random.Range(0, 4);
+                powerup = Random.Range(0, 5);
                 Debug.Log(powerup);
             }
         }

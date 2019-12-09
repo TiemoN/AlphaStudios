@@ -7,6 +7,9 @@ TagManager:
   - canonball
   - Item
   - Explosion
+  - Spieler
+  - P1
+  - P2
   layers:
   - Default
   - TransparentFX

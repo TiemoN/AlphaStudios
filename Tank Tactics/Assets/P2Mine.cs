@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class P1Mine : MonoBehaviour
+public class P2Mine : MonoBehaviour
 {
     public int despawntime;
     public GameObject Explosion, Particle;
@@ -18,7 +18,7 @@ public class P1Mine : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag("P1"))
+        if (!other.gameObject.CompareTag("P2"))
         {
             Explosion.SetActive(true);
             Particle.SetActive(true);
