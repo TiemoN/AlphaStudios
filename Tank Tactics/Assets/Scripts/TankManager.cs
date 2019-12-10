@@ -21,16 +21,16 @@ public class TankManager
         shooting = instance.GetComponent<Tank1canon>();
         canvasGameObject = instance.GetComponent<Canvas>().gameObject;
 
-        movement.playerNumber = playerNumber;
-        shooting.playerNumber = playerNumber;
+        //movement.playerNumber = playerNumber;
+        //shooting.playerNumber = playerNumber;
 
         coloredPlayerText = "<color=#" + ColorUtility.ToHtmlStringRGB(playerColor) + ">PLAYER " + playerNumber + "</color>";
 
-        MeshRenderer[] renderers = instance.GetComponentInChildren<MeshRenderer> ();
+        //MeshRenderer[] renderers = instance.GetComponentInChildren<MeshRenderer> ();
 
-        for (int i = 0; i < renderers.Length; i++)
+        //for (int i = 0; i < renderers.Length; i++)
         {
-            renderers[i].material.color = playerColor;
+            //renderers[i].material.color = playerColor;
         }
     }
 
