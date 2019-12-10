@@ -10,9 +10,13 @@ public class Tank1 : MonoBehaviour
     public bool advancedControl;
     float winkel, winkel2;
     int powerup = -1;
+    public Rigidbody rb;
 
     void Update()
     {
+
+        rb.velocity = Vector3.zero;
+
         if (advancedControl)
         {
             transform.Translate(Vector3.forward * speed * Input.GetAxis("P1Vertical") * Time.deltaTime);

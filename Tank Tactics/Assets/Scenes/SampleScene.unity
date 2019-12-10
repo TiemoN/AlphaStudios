@@ -12513,6 +12513,7 @@ MonoBehaviour:
   speed: 5
   rotspeed: 50
   advancedControl: 0
+  rb: {fileID: 0}
 --- !u!65 &1919400497
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13334,7 +13335,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &7002414745072802123
 MonoBehaviour:
@@ -13351,10 +13352,11 @@ MonoBehaviour:
   Tanktop: {fileID: 9177135291644074402}
   Canon: {fileID: 7002414744581133718}
   Bombe: {fileID: 404521978}
-  Mine: {fileID: 7203472805003062883, guid: 3c846ee4321df0e40a7586e8f9ff4573, type: 3}
+  Mine: {fileID: 2268201486017264720, guid: 3c846ee4321df0e40a7586e8f9ff4573, type: 3}
   speed: 5
   rotspeed: 500
   advancedControl: 0
+  rb: {fileID: 7002414745072802121}
 --- !u!23 &7322225483363124166
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13551,7 +13553,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!1 &8089457484031052576
 GameObject:
@@ -13611,6 +13613,7 @@ MonoBehaviour:
   speed: 5
   rotspeed: 500
   advancedControl: 0
+  rb: {fileID: 0}
 --- !u!1 &8296172667460263281
 GameObject:
   m_ObjectHideFlags: 0
@@ -13726,10 +13729,11 @@ MonoBehaviour:
   Tanktop: {fileID: 8089457484031052576}
   Canon: {fileID: 7941445142598764308}
   Bombe: {fileID: 1600246148}
-  Mine: {fileID: 2038245600650260089, guid: 4dfb8394fca6dd34bb229b6f93c10e56, type: 3}
+  Mine: {fileID: 1911323416335214580, guid: 4dfb8394fca6dd34bb229b6f93c10e56, type: 3}
   speed: 5
   rotspeed: 500
   advancedControl: 0
+  rb: {fileID: 7941445143027715019}
 --- !u!65 &8951414716465975285
 BoxCollider:
   m_ObjectHideFlags: 0

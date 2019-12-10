@@ -5,7 +5,7 @@ using UnityEngine;
 public class P2Mine : MonoBehaviour
 {
     public int despawntime;
-    public GameObject Explosion, Particle;
+    public GameObject Explosion, Particle, Mine;
     void Start()
     {
         StartCoroutine("Despawn");
@@ -29,6 +29,6 @@ public class P2Mine : MonoBehaviour
     IEnumerator explodiert()
     {
         yield return new WaitForSeconds(0.5f);
-        Destroy(this.gameObject);
+        Destroy(Mine.gameObject);
     }
 }
