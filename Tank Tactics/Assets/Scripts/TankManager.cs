@@ -26,11 +26,11 @@ public class TankManager
 
         coloredPlayerText = "<color=#" + ColorUtility.ToHtmlStringRGB(playerColor) + ">PLAYER " + playerNumber + "</color>";
 
-        //MeshRenderer[] renderers = instance.GetComponentInChildren<MeshRenderer> ();
+        //MeshRenderer[] renderers = instance.GetComponentInChildren<MeshRenderer>();
 
         //for (int i = 0; i < renderers.Length; i++)
         {
-            //renderers[i].material.color = playerColor;
+           //renderers[i].material.color = playerColor;
         }
     }
 

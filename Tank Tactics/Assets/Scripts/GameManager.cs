@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public int numRoundsToWin = 3;            
     public float startDelay = 3f;             
     public float endDelay = 3f;               
-    //public CameraControl cameraControl;      
+    public CameraControl cameraControl;      
     public Text messageText;                  
     public GameObject tankPrefab;            
     public TankManager[] tanks;               
@@ -54,14 +55,14 @@ public class GameManager : MonoBehaviour
         Transform[] targets = new Transform[tanks.Length];
 
         
-        //for (int i = 0; i < targets.Length; i++)
+        for (int i = 0; i < targets.Length; i++)
         {
           
-            //targets[i] = tanks[i]instance.transform;
+            targets[i] = tanks[i].instance.transform;
         }
 
         
-        //cameraControl.targets = targets;
+        cameraControl.targets = targets;
     }
 
 
@@ -80,8 +81,8 @@ public class GameManager : MonoBehaviour
         
         if (gameWinner != null)
         {
-           
-            Application.LoadLevel(Application.loadedLevel);
+
+            SceneManager.LoadScene(1);
         }
         else
         {
@@ -98,7 +99,7 @@ public class GameManager : MonoBehaviour
         DisableTankControl();
 
         
-        //cameraControl.SetStartPositionAndSize();
+        cameraControl.SetStartPositionAndSize();
 
         
         roundNumber++;
