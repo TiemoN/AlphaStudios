@@ -11,7 +11,7 @@ public class Tank4 : MonoBehaviour
     float winkel, winkel2;
     int powerup = -1;
     public Rigidbody rb;
-    //Steurung für Controller4 anpassen
+   
     void Update()
     {
 
@@ -19,15 +19,15 @@ public class Tank4 : MonoBehaviour
 
         if (advancedControl)
         {
-            transform.Translate(Vector3.forward * speed * Input.GetAxis("P1Vertical") * Time.deltaTime);
-            transform.Rotate(Vector3.down * rotspeed * Input.GetAxis("P1Horizontal") * Time.deltaTime);
-            Tanktop.transform.Rotate(Vector3.up * rotspeed * Input.GetAxis("P1HorizontalRight") * Time.deltaTime);
+            transform.Translate(Vector3.forward * speed * Input.GetAxis("P4Vertical") * Time.deltaTime);
+            transform.Rotate(Vector3.down * rotspeed * Input.GetAxis("P4Horizontal") * Time.deltaTime);
+            Tanktop.transform.Rotate(Vector3.up * rotspeed * Input.GetAxis("P4HorizontalRight") * Time.deltaTime);
         }
         else
         {
-            if (Input.GetAxis("P1Vertical") != 0 || Input.GetAxis("P1Horizontal") != 0)
+            if (Input.GetAxis("P4Vertical") != 0 || Input.GetAxis("P4Horizontal") != 0)
             {
-                winkel = Mathf.Atan2(Input.GetAxis("P1Horizontal"), Input.GetAxis("P1Vertical")) * Mathf.Rad2Deg;
+                winkel = Mathf.Atan2(Input.GetAxis("P4Horizontal"), Input.GetAxis("P4Vertical")) * Mathf.Rad2Deg;
                 if (winkel < 0)
                 {
                     winkel = winkel + 360;
@@ -53,9 +53,9 @@ public class Tank4 : MonoBehaviour
 
 
 
-            if (Input.GetAxis("P1VerticalRight") != 0 || Input.GetAxis("P1HorizontalRight") != 0)
+            if (Input.GetAxis("P4VerticalRight") != 0 || Input.GetAxis("P4HorizontalRight") != 0)
             {
-                winkel2 = Mathf.Atan2(Input.GetAxis("P1VerticalRight"), Input.GetAxis("P1HorizontalRight")) * Mathf.Rad2Deg;
+                winkel2 = Mathf.Atan2(Input.GetAxis("P4VerticalRight"), Input.GetAxis("P4HorizontalRight")) * Mathf.Rad2Deg;
 
                 winkel2 = winkel2 + 90;
 
@@ -79,7 +79,7 @@ public class Tank4 : MonoBehaviour
         }
 
 
-        if (Input.GetAxis("P1LeftTrigger") != 0)
+        if (Input.GetAxis("P4LeftTrigger") != 0)
         {
             switch (powerup)
             {

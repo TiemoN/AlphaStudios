@@ -11,7 +11,7 @@ public class Tank4canon : MonoBehaviour
     void Update()
     {
         cooldown = cooldown - Time.deltaTime;
-        if (Input.GetAxis("P1RightTrigger") > 0)
+        if (Input.GetAxis("P4RightTrigger") > 0)
         {
             if (cooldown <= 0)
             {
