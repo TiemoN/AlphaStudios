@@ -97,8 +97,8 @@ public class Tank1 : MonoBehaviour
                     break;
                 case 3:
                     //bombe
-                    Bombe.transform.position = Vector3.up + Vector3.right + Vector3.back;
-                    Bombe.SetActive(true);
+                    //Bombe.transform.position = Vector3.up + Vector3.right + Vector3.back;
+                    //Bombe.SetActive(true);
                     break;
                     //Mine
                 case 4:

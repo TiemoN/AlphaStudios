@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 4418951758766437065}
   m_Layer: 0
   m_Name: P4
-  m_TagString: P1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -257,7 +257,7 @@ MonoBehaviour:
   Bombe: {fileID: 0}
   Mine: {fileID: 0}
   speed: 40
-  rotspeed: 250
+  rotspeed: 1000
   advancedControl: 0
   rb: {fileID: 4418951758766437062}
 --- !u!114 &4418951758766437065
