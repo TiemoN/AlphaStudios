@@ -19268,7 +19268,7 @@ MonoBehaviour:
   messageText: {fileID: 963702923}
   tankPrefab:
   - {fileID: 3413512173494728446, guid: 5c92d2c569f9b2743a07168d47c0362a, type: 3}
-  - {fileID: 3206014291986203043, guid: 629ec2c86cbc6f84c8adb18f0f97db86, type: 3}
+  - {fileID: 3413512173494728446, guid: 629ec2c86cbc6f84c8adb18f0f97db86, type: 3}
   tanks:
   - playerColor: {r: 0, g: 0, b: 0, a: 0}
     spawnPoint: {fileID: 2029238348}

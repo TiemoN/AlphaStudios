@@ -16,6 +16,8 @@ public class TankManager
     private Tank1canon shooting1;
     private Tank2 movement2;
     private Tank2canon shooting2;
+    private Tank3 movement3;
+    private Tank3canon shooting3;
     //private GameObject canvasGameObject;
 
     public void Setup()
@@ -23,13 +25,15 @@ public class TankManager
        switch(tankID)
         {
             case 1:
-            movement1 = instance.GetComponent<Tank1>();
-            shooting1 = instance.GetComponent<Tank1canon>();
+                movement1 = instance.GetComponent<Tank1>();
+                shooting1 = instance.GetComponent<Tank1canon>();
                 break;
             case 2:
                 movement2 = instance.GetComponent<Tank2>();
                 shooting2 = instance.GetComponent<Tank2canon>();
                 break;
+            case 3:
+                movement3 = instance.GetComponent<>
 
         }
             //canvasGameObject = instance.GetComponent<Canvas>().gameObject;

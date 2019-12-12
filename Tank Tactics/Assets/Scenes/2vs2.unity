@@ -6359,7 +6359,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &332852011 stripped
 Transform:
@@ -6385,7 +6385,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint2
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6397,7 +6397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 350438442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -71.2, y: 0, z: -54}
+  m_LocalPosition: {x: -58.1, y: 0, z: 27.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8398,7 +8398,7 @@ RectTransform:
   m_Children:
   - {fileID: 963702926}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13003,6 +13003,36 @@ Transform:
   m_Father: {fileID: 397914020}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1618300679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1618300680}
+  m_Layer: 0
+  m_Name: SpawnPoint4
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1618300680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618300679}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -22.7, y: -103.4, z: 53.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &1648069223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18814,6 +18844,36 @@ Transform:
   m_Father: {fileID: 404521979}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &1859488511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1859488512}
+  m_Layer: 0
+  m_Name: SpawnPoint3
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1859488512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859488511}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -126, y: -121.3, z: 22.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1877063477
 GameObject:
   m_ObjectHideFlags: 0
@@ -19268,7 +19328,9 @@ MonoBehaviour:
   messageText: {fileID: 963702923}
   tankPrefab:
   - {fileID: 3413512173494728446, guid: 5c92d2c569f9b2743a07168d47c0362a, type: 3}
-  - {fileID: 3206014291986203043, guid: 629ec2c86cbc6f84c8adb18f0f97db86, type: 3}
+  - {fileID: 3413512173494728446, guid: 629ec2c86cbc6f84c8adb18f0f97db86, type: 3}
+  - {fileID: 3413512173494728446, guid: 9f4ef27c27cb93846a179394b141792f, type: 3}
+  - {fileID: 3413512173494728446, guid: cb016d78690851b499e05bc76d6cd9ac, type: 3}
   tanks:
   - playerColor: {r: 0, g: 0, b: 0, a: 0}
     spawnPoint: {fileID: 2029238348}
@@ -19278,6 +19340,18 @@ MonoBehaviour:
     wins: 0
   - playerColor: {r: 0, g: 0, b: 0, a: 0}
     spawnPoint: {fileID: 350438443}
+    playerNumber: 0
+    coloredPlayerText: 
+    instance: {fileID: 0}
+    wins: 0
+  - playerColor: {r: 0, g: 0, b: 0, a: 0}
+    spawnPoint: {fileID: 1859488512}
+    playerNumber: 0
+    coloredPlayerText: 
+    instance: {fileID: 0}
+    wins: 0
+  - playerColor: {r: 0, g: 0, b: 0, a: 0}
+    spawnPoint: {fileID: 1618300680}
     playerNumber: 0
     coloredPlayerText: 
     instance: {fileID: 0}
@@ -19294,7 +19368,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1957892164 stripped
 GameObject:
@@ -19771,7 +19845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029238347}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -22.7, y: 0, z: 53.8}
+  m_LocalPosition: {x: -22.7, y: 0, z: 76.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
