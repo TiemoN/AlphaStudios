@@ -6397,7 +6397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 350438442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -58.1, y: 0, z: 27.9}
+  m_LocalPosition: {x: 73.6, y: 0, z: -85.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13027,7 +13027,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618300679}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -22.7, y: -103.4, z: 53.8}
+  m_LocalPosition: {x: -93.4, y: 0, z: 92.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -18867,13 +18867,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859488511}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -126, y: -121.3, z: 22.6}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -91.9, y: 0, z: -94.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1877063477
 GameObject:
   m_ObjectHideFlags: 0
@@ -19332,25 +19332,25 @@ MonoBehaviour:
   - {fileID: 3413512173494728446, guid: 9f4ef27c27cb93846a179394b141792f, type: 3}
   - {fileID: 3413512173494728446, guid: cb016d78690851b499e05bc76d6cd9ac, type: 3}
   tanks:
-  - playerColor: {r: 0, g: 0, b: 0, a: 0}
+  - playerColor: {r: 0.049439307, g: 0.16760564, b: 0.9528302, a: 0}
     spawnPoint: {fileID: 2029238348}
     playerNumber: 0
     coloredPlayerText: 
     instance: {fileID: 0}
     wins: 0
-  - playerColor: {r: 0, g: 0, b: 0, a: 0}
+  - playerColor: {r: 0.0046724924, g: 0.16579328, b: 0.990566, a: 0}
     spawnPoint: {fileID: 350438443}
     playerNumber: 0
     coloredPlayerText: 
     instance: {fileID: 0}
     wins: 0
-  - playerColor: {r: 0, g: 0, b: 0, a: 0}
+  - playerColor: {r: 0.9339623, g: 0.030838395, b: 0.030838395, a: 0}
     spawnPoint: {fileID: 1859488512}
     playerNumber: 0
     coloredPlayerText: 
     instance: {fileID: 0}
     wins: 0
-  - playerColor: {r: 0, g: 0, b: 0, a: 0}
+  - playerColor: {r: 0.8867924, g: 0.10457456, b: 0.10457456, a: 0}
     spawnPoint: {fileID: 1618300680}
     playerNumber: 0
     coloredPlayerText: 
@@ -19845,7 +19845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029238347}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -22.7, y: 0, z: 76.9}
+  m_LocalPosition: {x: 76.4, y: 0, z: 86.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

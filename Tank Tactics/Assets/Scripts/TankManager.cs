@@ -18,6 +18,8 @@ public class TankManager
     private Tank2canon shooting2;
     private Tank3 movement3;
     private Tank3canon shooting3;
+    private Tank4 movement4;
+    private Tank4canon shooting4;
     //private GameObject canvasGameObject;
 
     public void Setup()
@@ -33,7 +35,13 @@ public class TankManager
                 shooting2 = instance.GetComponent<Tank2canon>();
                 break;
             case 3:
-                movement3 = instance.GetComponent<>
+                movement3 = instance.GetComponent<Tank3>();
+                shooting3 = instance.GetComponent<Tank3canon>();
+                break;
+            case 4:
+                movement4 = instance.GetComponent<Tank4>();
+                shooting4 = instance.GetComponent<Tank4canon>();
+                break;
 
         }
             //canvasGameObject = instance.GetComponent<Canvas>().gameObject;
@@ -62,6 +70,14 @@ public class TankManager
                 movement2.enabled = false;
                 shooting2.enabled = false;
                 break;
+            case 3:
+                movement3.enabled = false;
+                shooting3.enabled = false;
+                break;
+            case 4:
+                movement4.enabled = false;
+                shooting4.enabled = false;
+                break;
         }
         //canvasGameObject.SetActive(false);
     }
@@ -77,6 +93,14 @@ public class TankManager
             case 2:
                 movement2.enabled = true;
                 shooting2.enabled = true;
+                break;
+            case 3:
+                movement3.enabled = true;
+                shooting3.enabled = true;
+                break;
+            case 4:
+                movement4.enabled = true;
+                shooting4.enabled = true;
                 break;
         }
 
