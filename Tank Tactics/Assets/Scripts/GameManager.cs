@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public float endDelay = 3f;               
     public CameraControl cameraControl;      
     public Text messageText;                  
-    public GameObject tankPrefab;            
+    public GameObject[] tankPrefab;            
     public TankManager[] tanks;               
 
 
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         {
             
             tanks[i].instance =
-                Instantiate(tankPrefab, tanks[i].spawnPoint.position, tanks[i].spawnPoint.rotation) as GameObject;
+                Instantiate(tankPrefab[i], Vector3.zero, Quaternion.Euler(Vector3.zero)) as GameObject;
             tanks[i].playerNumber = i + 1;
             tanks[i].Setup();
         }

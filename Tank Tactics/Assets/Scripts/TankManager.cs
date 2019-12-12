@@ -19,19 +19,18 @@ public class TankManager
     {
         movement = instance.GetComponent<Tank1>();
         shooting = instance.GetComponent<Tank1canon>();
-        canvasGameObject = instance.GetComponent<Canvas>().gameObject;
+        //canvasGameObject = instance.GetComponent<Canvas>().gameObject;
 
         //movement.playerNumber = playerNumber;
         //shooting.playerNumber = playerNumber;
 
         coloredPlayerText = "<color=#" + ColorUtility.ToHtmlStringRGB(playerColor) + ">PLAYER " + playerNumber + "</color>";
 
-        //MeshRenderer[] renderers = instance.GetComponentInChildren<MeshRenderer>();
+        MeshRenderer renderer = instance.GetComponentInChildren<MeshRenderer>();
 
-        //for (int i = 0; i < renderers.Length; i++)
-        {
-           //renderers[i].material.color = playerColor;
-        }
+       
+           renderer.material.color = playerColor;
+        
     }
 
     public void DisableControl()
