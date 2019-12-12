@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public int numRoundsToWin = 3;            
     public float startDelay = 3f;             
     public float endDelay = 3f;               
-    public CameraControl cameraControl;      
+    //public CameraControl cameraControl;      
     public Text messageText;                  
     public GameObject[] tankPrefab;            
     public TankManager[] tanks;               
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         }
 
         
-        cameraControl.targets = targets;
+          //cameraControl.targets = targets;
     }
 
 
@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
         DisableTankControl();
 
         
-        cameraControl.SetStartPositionAndSize();
+        //cameraControl.SetStartPositionAndSize();
 
         
         roundNumber++;

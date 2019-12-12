@@ -190,7 +190,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3413512173494728446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -47.9, y: 3.4630277e-17, z: -12.6}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5286027497318711845}
@@ -256,7 +256,7 @@ MonoBehaviour:
   Canon: {fileID: 4418951759262563865}
   Bombe: {fileID: 0}
   Mine: {fileID: 2268201486017264720, guid: 3c846ee4321df0e40a7586e8f9ff4573, type: 3}
-  speed: 7
+  speed: 40
   rotspeed: 250
   advancedControl: 0
   rb: {fileID: 4418951758766437062}
