@@ -257,8 +257,9 @@ MonoBehaviour:
   Bombe: {fileID: 0}
   Mine: {fileID: 2268201486017264720, guid: 3c846ee4321df0e40a7586e8f9ff4573, type: 3}
   speed: 40
-  rotspeed: 1000
+  rotspeed: 100
   advancedControl: 0
+  advancedControl2: 1
   rb: {fileID: 4418951758766437062}
 --- !u!114 &4418951758766437065
 MonoBehaviour:

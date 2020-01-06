@@ -8,6 +8,7 @@ public class Tank1 : MonoBehaviour
     public float speed;
     public float rotspeed;
     public bool advancedControl;
+    public bool advancedControl2;
     float winkel, winkel2;
     int powerup = -1;
     public Rigidbody rb;
@@ -22,6 +23,13 @@ public class Tank1 : MonoBehaviour
             transform.Translate(Vector3.forward * speed * Input.GetAxis("P1Vertical") * Time.deltaTime);
             transform.Rotate(Vector3.down * rotspeed * Input.GetAxis("P1Horizontal") * Time.deltaTime);
             Tanktop.transform.Rotate(Vector3.up * rotspeed * Input.GetAxis("P1HorizontalRight") * Time.deltaTime);
+        }
+        if (advancedControl2)
+        {
+            this.transform.position += new Vector3(0, 0, speed * 1) * Input.GetAxis("P1Vertical") * Time.deltaTime;
+            this.transform.position += new Vector3(speed * 1, 0, 0) * Input.GetAxis("P1Horizontal") * Time.deltaTime,Space.Self;
+
+
         }
         else
         {
