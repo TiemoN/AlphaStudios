@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Tank1 : MonoBehaviour
 {
-    public GameObject Tanktop, Canon, Bombe, Mine;
+    public GameObject Tanktop, Canon, Bombe, Mine, Body;
     public float speed;
     public float rotspeed;
-    public bool advancedControl;
-    public bool advancedControl2;
+    public float Trotspeed;
+    public enum ControlMode {
+            Mode1,
+            Talib,
+            Viktor,
+    }
+    public ControlMode mode;
     float winkel, winkel2;
     int powerup = -1;
     public Rigidbody rb;
@@ -18,71 +23,43 @@ public class Tank1 : MonoBehaviour
 
         rb.velocity = Vector3.zero;
 
-        if (advancedControl)
+        if (mode == ControlMode.Mode1)
         {
             transform.Translate(Vector3.forward * speed * Input.GetAxis("P1Vertical") * Time.deltaTime);
             transform.Rotate(Vector3.down * rotspeed * Input.GetAxis("P1Horizontal") * Time.deltaTime);
             Tanktop.transform.Rotate(Vector3.up * rotspeed * Input.GetAxis("P1HorizontalRight") * Time.deltaTime);
         }
-        if (advancedControl2)
+        else if (mode == ControlMode.Talib)
         {
             this.transform.position += new Vector3(0, 0, speed * 1) * Input.GetAxis("P1Vertical") * Time.deltaTime;
-            this.transform.position += new Vector3(speed * 1, 0, 0) * Input.GetAxis("P1Horizontal") * Time.deltaTime,Space.Self;
+            this.transform.position += new Vector3(speed * 1, 0, 0) * Input.GetAxis("P1Horizontal") * Time.deltaTime;
 
-
+            transform.Rotate(Vector3.down * rotspeed * Input.GetAxis("P1Horizontal") * Time.deltaTime);
+            Tanktop.transform.Rotate(Vector3.up * rotspeed * Input.GetAxis("P1HorizontalRight") * Time.deltaTime);
         }
-        else
-        {
-            if(Input.GetAxis("P1Vertical") != 0 || Input.GetAxis("P1Horizontal") != 0)
+        else if(mode == ControlMode.Viktor) {
+            
+            Vector3 newPos = transform.position;
+            newPos += new Vector3(0, 0, speed * 1) * Input.GetAxis("P1Vertical") * Time.deltaTime;
+            newPos += new Vector3(speed * -1, 0, 0) * Input.GetAxis("P1Horizontal") * Time.deltaTime;
+
+            float turn = Trotspeed * Time.deltaTime;
+            if (newPos != transform.position)
             {
-                winkel = Mathf.Atan2(Input.GetAxis("P1Horizontal"), Input.GetAxis("P1Vertical")) * Mathf.Rad2Deg;
-                if(winkel < 0)
-                {
-                    winkel = winkel + 360;
-                }
-                winkel = 360 - winkel;
-
-                if(winkel != this.transform.eulerAngles.y && !(winkel -10 < this.transform.eulerAngles.y && winkel > this.transform.eulerAngles.y) && !(winkel +10 > this.transform.eulerAngles.y && winkel < this.transform.eulerAngles.y))
-                {
-                    if((this.transform.eulerAngles.y - winkel < 0 || this.transform.eulerAngles.y - winkel > 180) && this.transform.eulerAngles.y - winkel > -180)
-                    {
-                        transform.Rotate(Vector3.down * -rotspeed * Time.deltaTime);
-                    }
-                    else
-                    {
-                        transform.Rotate(Vector3.down * rotspeed * Time.deltaTime);
-                    }
-                }
-                else
-                {
-                    transform.Translate(Vector3.forward * Time.deltaTime * speed);
-                }
+                Quaternion targetRotation = Quaternion.LookRotation(newPos - transform.position);
+                Body.transform.rotation = Quaternion.Slerp(Body.transform.rotation, targetRotation, turn);
+                transform.position = newPos;
             }
-
-
 
             if (Input.GetAxis("P1VerticalRight") != 0 || Input.GetAxis("P1HorizontalRight") != 0)
             {
-                winkel2 = Mathf.Atan2(Input.GetAxis("P1VerticalRight"), Input.GetAxis("P1HorizontalRight")) * Mathf.Rad2Deg;
+                Vector3 ttnP = Tanktop.transform.position;
+                ttnP += new Vector3(0, 0, speed * -1) * Input.GetAxis("P1VerticalRight") * Time.deltaTime;
+                ttnP += new Vector3(speed * 1, 0, 0) * Input.GetAxis("P1HorizontalRight") * Time.deltaTime;
+                float ttTurn = rotspeed * Time.deltaTime;
 
-                winkel2 = winkel2 + 90;
-
-                if (winkel2 < 0)
-                {
-                    winkel2 = winkel2 + 360;
-                }
-
-                if (winkel2 != Tanktop.transform.eulerAngles.y && !(winkel2 - 10 < Tanktop.transform.eulerAngles.y && winkel2 > Tanktop.transform.eulerAngles.y) && !(winkel2 + 10 > Tanktop.transform.eulerAngles.y && winkel2 < Tanktop.transform.eulerAngles.y))
-                {
-                    if ((Tanktop.transform.eulerAngles.y - winkel2 < 0 || Tanktop.transform.eulerAngles.y - winkel2 > 180) && Tanktop.transform.eulerAngles.y - winkel2 > -180)
-                    {
-                        Tanktop.transform.Rotate(Vector3.down * -rotspeed * Time.deltaTime);
-                    }
-                    else
-                    {
-                        Tanktop.transform.Rotate(Vector3.down * rotspeed * Time.deltaTime);
-                    }
-                }
+                Quaternion turretRotation = Quaternion.LookRotation(ttnP - Tanktop.transform.position);
+                Tanktop.transform.rotation = Quaternion.Slerp(Tanktop.transform.rotation, turretRotation, ttTurn);
             }
         }
 
