@@ -5,6 +5,8 @@ using UnityEngine;
 public class Lives : MonoBehaviour
 {
     public float lives;
+  
+   
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +16,8 @@ public class Lives : MonoBehaviour
             if(lives <= 0)
             {
                 Destroy(this.gameObject);
+                
+               
             }
         }
     }

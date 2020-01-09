@@ -11,12 +11,40 @@ public class canonball : MonoBehaviour
     {
         rb.AddRelativeForce(Vector3.forward * speed);
     }
-    private void OnCollisionExit(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (bounce)
         {
             Destroy(this.gameObject);
         }
         bounce = true;
+       
+    }
+    
+  
+        private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "P2")
+        {
+            Destroy(gameObject);
+        }
+        if (other.tag == "P1")
+        {
+            Destroy(gameObject);
+        }
+        if (other.tag == "P3")
+        {
+            Destroy(gameObject);
+        }
+        if (other.tag == "P4")
+        {
+            Destroy(gameObject);
+        }
+        if (other.tag
+            == "canonball")
+        {
+            Destroy(gameObject);
+        }
+
     }
 }

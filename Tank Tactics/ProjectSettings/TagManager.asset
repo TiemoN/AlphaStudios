@@ -10,6 +10,9 @@ TagManager:
   - Spieler
   - P1
   - P2
+  - P3
+  - P4
+  - bullet
   layers:
   - Default
   - TransparentFX

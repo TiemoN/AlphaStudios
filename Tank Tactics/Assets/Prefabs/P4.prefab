@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5286027497318711845}
   - component: {fileID: 6055725437802230764}
   - component: {fileID: 1030037171412332962}
+  - component: {fileID: 3392145173238417245}
   m_Layer: 0
   m_Name: Panzer
   m_TagString: Untagged
@@ -79,6 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3392145173238417245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231527808680725601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e59a68c605f9afd4e93675a781bb24a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Explode: {fileID: 0}
 --- !u!1 &2532551065404748333
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,9 +189,10 @@ GameObject:
   - component: {fileID: 3413512173494728445}
   - component: {fileID: 5261490410717225300}
   - component: {fileID: 4418951758766437065}
+  - component: {fileID: 7482113588009343101}
   m_Layer: 0
   m_Name: P4
-  m_TagString: Untagged
+  m_TagString: P4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -225,8 +240,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.360163, y: 7.5315914, z: 13.546114}
-  m_Center: {x: 1.0679464, y: 4.49549, z: 0.115021706}
+  m_Size: {x: 11.884953, y: 7.5315914, z: 16.473871}
+  m_Center: {x: 0.974493, y: 4.49549, z: 0.44360065}
 --- !u!65 &3413512173494728445
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -273,6 +288,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 1
+--- !u!114 &7482113588009343101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3413512173494728446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e59a68c605f9afd4e93675a781bb24a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Explode: {fileID: 4430130037600731492, guid: 4b144edd6153ed84e9ca38c6faf3dd31, type: 3}
 --- !u!1 &4418951759262563865
 GameObject:
   m_ObjectHideFlags: 0
