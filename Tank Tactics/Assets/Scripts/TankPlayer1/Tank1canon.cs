@@ -7,6 +7,7 @@ public class Tank1canon : MonoBehaviour
     public GameObject canonball;
     public float setcooldown;
     float cooldown;
+    public ParticleSystem ShootParticle;
 
     void Update()
     {
@@ -38,5 +39,6 @@ public class Tank1canon : MonoBehaviour
         canonball.transform.rotation = transform.rotation;
         GameObject NewCanonBall = Instantiate(canonball);
         cooldown = setcooldown;
+        Instantiate(ShootParticle, transform.position, transform.rotation);
     }
 }

@@ -7,15 +7,23 @@ public class canonball : MonoBehaviour
     public Rigidbody rb;
     public int speed;
     bool bounce;
+    public ParticleSystem BounceExplosion;
+   
     void Start()
     {
         rb.AddRelativeForce(Vector3.forward * speed);
+        
+
     }
     private void OnCollisionEnter(Collision collision)
+   
     {
         if (bounce)
         {
+           
             Destroy(this.gameObject);
+            Instantiate(BounceExplosion, transform.position, Quaternion.identity);
+
         }
         bounce = true;
        
@@ -47,4 +55,5 @@ public class canonball : MonoBehaviour
         }
 
     }
+    
 }
