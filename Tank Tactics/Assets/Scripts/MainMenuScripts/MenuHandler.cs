@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MenuHandler : MonoBehaviour
 {
-    public GameObject Modus, Map, HowToPlay, Options, Credits;
+    public GameObject Modus, Map, MapLayout, HowToPlay, Options, Credits;
     private void Start()
     {
         Modus.SetActive(true);
@@ -13,6 +13,7 @@ public class MenuHandler : MonoBehaviour
     {
         Modus.SetActive(true);
         Map.SetActive(false);
+        MapLayout.SetActive(false);
         HowToPlay.SetActive(false);
         Options.SetActive(false);
         Credits.SetActive(false);
@@ -21,6 +22,16 @@ public class MenuHandler : MonoBehaviour
     {
         Modus.SetActive(false);
         Map.SetActive(true);
+        MapLayout.SetActive(false);
+        HowToPlay.SetActive(false);
+        Options.SetActive(false);
+        Credits.SetActive(false);
+    }
+    public void MapLayoutMenu()
+    {
+        Modus.SetActive(false);
+        Map.SetActive(false);
+        MapLayout.SetActive(true);
         HowToPlay.SetActive(false);
         Options.SetActive(false);
         Credits.SetActive(false);
@@ -29,6 +40,7 @@ public class MenuHandler : MonoBehaviour
     {
         Modus.SetActive(false);
         Map.SetActive(false);
+        MapLayout.SetActive(false);
         HowToPlay.SetActive(true);
         Options.SetActive(false);
         Credits.SetActive(false);
@@ -37,6 +49,7 @@ public class MenuHandler : MonoBehaviour
     {
         Modus.SetActive(false);
         Map.SetActive(false);
+        MapLayout.SetActive(false);
         HowToPlay.SetActive(false);
         Options.SetActive(true);
         Credits.SetActive(false);
@@ -45,6 +58,7 @@ public class MenuHandler : MonoBehaviour
     {
         Modus.SetActive(false);
         Map.SetActive(false);
+        MapLayout.SetActive(false);
         HowToPlay.SetActive(false);
         Options.SetActive(false);
         Credits.SetActive(true);
