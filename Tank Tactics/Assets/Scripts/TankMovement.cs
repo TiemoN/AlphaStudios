@@ -5,94 +5,46 @@ using UnityEngine;
 public class TankMovement : MonoBehaviour
 {
     public int m_PlayerNumber = 1;
-    public float m_Speed = 12f;
-    public float m_TurnSpeed = 180f;
-    public AudioSource m_MovementAudio;
-    public AudioClip m_EngineIdling;
-    public AudioClip m_EngineDriving;
-    public float m_PitchRange;
+    public GameObject TankTurret, TankBody/*, Canon, Bombe, Mine*/;
+    public float speed;
+    public float rotspeed;
+    public float trotspeed;
+    //public AudioSource m_MovementAudio;
+    //public AudioClip m_EngineIdling;
 
-    private string m_MovementAxisName;
-    private string m_TurnAxisName;
-    private Rigidbody m_RigidBody;
-    private float m_MovementInputValue;
-    private float m_TurnInputValue;
-    private float m_OriginalPitch;
 
-    private void Awake()
-    {
-        m_RigidBody = GetComponent<Rigidbody>();
-    }
+    //int powerup = -1;
 
-    private void OnEnable()
-    {
-        m_RigidBody.isKinematic = false;
-        m_MovementInputValue = 0f;
-        m_TurnInputValue = 0f;
-    }
-
-    private void OnDisable()
-    {
-        m_RigidBody.isKinematic = true;
-    }
-
-    private void Start()
-    {
-        m_MovementAxisName = "GPVertical" + m_PlayerNumber;
-        m_TurnAxisName = "GPHorizontal" + m_PlayerNumber;
-
-        m_OriginalPitch = m_MovementAudio.pitch;
-    }
+    public Rigidbody rb;
 
     private void Update()
     {
-        m_MovementInputValue = Input.GetAxis(m_MovementAxisName);
-        m_TurnInputValue = Input.GetAxis(m_TurnAxisName);
+        rb.velocity = Vector3.zero;
 
-        EngineAudio();
-    }
+        Vector3 newPos = transform.position;
+        newPos += new Vector3(0, 0, speed * 1) * Input.GetAxis("GPVertical" + m_PlayerNumber) * Time.deltaTime;
+        newPos += new Vector3(speed * -1, 0, 0) * Input.GetAxis("GPHorizontal" + m_PlayerNumber) * Time.deltaTime;
 
-    private void EngineAudio()
-    {
-        if (Mathf.Abs(m_TurnInputValue) < 0.1f && Mathf.Abs(m_TurnInputValue) < 0.1f)
+        float turn = trotspeed * Time.deltaTime;
+        if (newPos != transform.position)
         {
-            if (m_MovementAudio.clip == m_EngineDriving)
-            {
-                m_MovementAudio.clip = m_EngineIdling;
-                m_MovementAudio.pitch = Random.Range(m_OriginalPitch - m_PitchRange, m_OriginalPitch + m_PitchRange);
-                m_MovementAudio.Play();
-            }
+            Quaternion targetRotation = Quaternion.LookRotation(newPos - transform.position);
+            TankBody.transform.rotation = Quaternion.Slerp(TankBody.transform.rotation, targetRotation, turn);
+            transform.position = newPos;
         }
-        else
+
+        if (Input.GetAxis("GPVerticalRight" + m_PlayerNumber) != 0 || Input.GetAxis("GPHorizontalRight" + m_PlayerNumber) != 0)
         {
-            if (m_MovementAudio.clip == m_EngineIdling)
-            {
-                m_MovementAudio.clip = m_EngineDriving;
-                m_MovementAudio.pitch = Random.Range(m_OriginalPitch - m_PitchRange, m_OriginalPitch + m_PitchRange);
-                m_MovementAudio.Play();
-            }
+            Vector3 ttnP = TankTurret.transform.position;
+            ttnP += new Vector3(0, 0, speed * -1) * Input.GetAxis("GPVerticalRight" + m_PlayerNumber) * Time.deltaTime;
+            ttnP += new Vector3(speed * 1, 0, 0) * Input.GetAxis("GPHorizontalRight" + m_PlayerNumber) * Time.deltaTime;
+            float ttTurn = rotspeed * Time.deltaTime;
+
+            Quaternion turretRotation = Quaternion.LookRotation(ttnP - TankTurret.transform.position);
+            TankTurret.transform.rotation = Quaternion.Slerp(TankTurret.transform.rotation, turretRotation, ttTurn);
         }
-    }
-    //Hier eigenen Movement Script einfügen
-    private void FixedUpdate()
-    {
-        Move();
-        Turn();
-    }
-
-    private void Move()
-    {
-        Vector3 movement = transform.forward * m_MovementInputValue * m_Speed * Time.deltaTime;
-
-        m_RigidBody.MovePosition(m_RigidBody.position + movement);
-    }
-
-    private void Turn()
-    {
-        float turn = m_TurnInputValue * m_Speed * Time.deltaTime;
-
-        Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
-
-        m_RigidBody.MoveRotation(m_RigidBody.rotation * turnRotation);
     }
 }
+    
+ 
+

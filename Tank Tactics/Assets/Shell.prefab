@@ -47,7 +47,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -4863,7 +4863,7 @@ GameObject:
   - component: {fileID: 5242988546875254251}
   - component: {fileID: 8855614755723244269}
   - component: {fileID: 3524302869652727520}
-  - component: {fileID: 7003559984470689701}
+  - component: {fileID: 5803583500766075997}
   m_Layer: 0
   m_Name: Shell
   m_TagString: Untagged
@@ -4878,9 +4878,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5662574634416633057}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 247.42644, y: 419.1353, z: -521.73663}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
+  m_LocalPosition: {x: -93.4, y: 6.024, z: 102.564}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1248354540392904210}
   m_Father: {fileID: 0}
@@ -4939,8 +4939,8 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5662574634416633057}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_Material: {fileID: 13400000, guid: 59fcd18833b20e54cb45590b22e9eac9, type: 2}
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -4960,8 +4960,8 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &7003559984470689701
+  m_CollisionDetection: 2
+--- !u!114 &5803583500766075997
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4970,16 +4970,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5662574634416633057}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a31d6fb8bdfb7b84cacaeeee457b4d25, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a36975a250297e479f0cea729e0be90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TankMask:
-    serializedVersion: 2
-    m_Bits: 256
-  m_ExplosionParticles: {fileID: 4655540784244568849, guid: 57cc489d9c99c3f40b1a7d893fff3d49,
-    type: 3}
-  m_ExplosionAudio: {fileID: 0}
-  m_MaxDamage: 100
-  m_ExplosionForce: 1000
-  m_MaxLifeTime: 2
-  m_ExplosionRadius: 5
+  rb: {fileID: 3524302869652727520}
+  speed: 10
+  Explode: {fileID: 0}

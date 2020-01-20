@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 3741938088923872625}
   - component: {fileID: 9119853628278250051}
   - component: {fileID: 2821910754817554477}
-  - component: {fileID: 8542405961132868954}
   m_Layer: 8
   m_Name: Tank
   m_TagString: Untagged
@@ -32,12 +31,11 @@ Transform:
   m_GameObject: {fileID: 2963948062958169278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 5488514851574301663}
   - {fileID: 2559802516003555306}
   - {fileID: 119998779464458555}
-  - {fileID: 7406314015144362888}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -275,12 +273,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerNumber: 1
-  m_Speed: 12
-  m_TurnSpeed: 180
-  m_MovementAudio: {fileID: 6858948720139104061}
-  m_EngineIdling: {fileID: 0}
-  m_EngineDriving: {fileID: 0}
-  m_PitchRange: 0
+  TankTurret: {fileID: 4301824301292461172}
+  TankBody: {fileID: 3335305698314410227}
+  speed: 50
+  rotspeed: 50
+  trotspeed: 50
+  rb: {fileID: 7097153660181813715}
 --- !u!114 &2821910754817554477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,24 +294,6 @@ MonoBehaviour:
   m_StartingHealth: 1
   m_ExplosionPrefab: {fileID: 582674579549315685, guid: 57cc489d9c99c3f40b1a7d893fff3d49,
     type: 3}
---- !u!114 &8542405961132868954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2963948062958169278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e377e66083a6134db1b5c8977ec1912, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PlayerNumber: 1
-  Shell: {fileID: 5662574634416633057, guid: d5825f926fbf05143a3359894cf1652e, type: 3}
-  m_Shell: {fileID: 3524302869652727520, guid: d5825f926fbf05143a3359894cf1652e, type: 3}
-  m_FireTransform: {fileID: 7406314015144362888}
-  setcooldown: 1
-  ShootParticle: {fileID: 0}
 --- !u!1 &3108615113026247312
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +509,8 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 9, z: 0}
   m_LocalScale: {x: 0.8736877, y: 0.8736877, z: 0.8736877}
-  m_Children: []
+  m_Children:
+  - {fileID: 7406314015144362888}
   m_Father: {fileID: 2267939371707719341}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -774,6 +755,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7406314015144362888}
+  - component: {fileID: 74625211550891108}
   m_Layer: 8
   m_Name: FireTransform
   m_TagString: Untagged
@@ -788,10 +770,37 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5234039978806433122}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.15, y: 15.6, z: -28.19}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 1, z: -0.00000008146034, w: 0}
+  m_LocalPosition: {x: 0, y: 6.936113, z: -27.652905}
+  m_LocalScale: {x: 1.1445737, y: 1.1445737, z: 1.1445737}
   m_Children: []
-  m_Father: {fileID: 2267939371707719341}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 2559802516003555306}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &74625211550891108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5234039978806433122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e377e66083a6134db1b5c8977ec1912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayerNumber: 1
+  Shell: {fileID: 5662574634416633057, guid: d5825f926fbf05143a3359894cf1652e, type: 3}
+  setcooldown: 1
+  ShootParticle: {fileID: 4655540784244568849, guid: 57cc489d9c99c3f40b1a7d893fff3d49,
+    type: 3}
+  m_Shell: {fileID: 0}
+  m_FireTransform: {fileID: 5159092874540542452, guid: d5825f926fbf05143a3359894cf1652e,
+    type: 3}
+  m_AimSlider: {fileID: 0}
+  m_ShootingAudio: {fileID: 0}
+  m_ChargingClip: {fileID: 0}
+  m_FireClip: {fileID: 0}
+  m_MinLaunchForce: 0
+  m_MaxLaunchForce: 0
+  m_MaxChargeTime: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tank : MonoBehaviour
 {
-    public int playerNumber = 4;
+    public int playerNumber = 1;
 
     public GameObject TankTurret, TankBody, canonball, Canon, Bombe, Mine;
     public float lives;
