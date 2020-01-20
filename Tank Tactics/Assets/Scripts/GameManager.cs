@@ -1,92 +1,78 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public int numRoundsToWin = 3;            
-    public float startDelay = 3f;             
-    public float endDelay = 3f;               
-    //public CameraControl cameraControl;      
-    public Text messageText;                  
-    public GameObject[] tankPrefab;            
-    public TankManager[] tanks;               
+    public int m_NumRoundsToWin = 5;
+    public float m_StartDelay = 3f;
+    public float m_EndDelay = 3f;
+    //public CameraControl m_CameraControl;
+    public Text m_MessageText;
+    public GameObject m_TankPrefab;
+    public TankManager[] m_Tanks;
 
 
-    private int roundNumber;                  
-    private WaitForSeconds startWait;        
-    private WaitForSeconds endWait;          
-    private TankManager roundWinner;         
-    private TankManager gameWinner;           
+    private int m_RoundNumber;
+    private WaitForSeconds m_StartWait;
+    private WaitForSeconds m_EndWait;
+    private TankManager m_RoundWinner;
+    private TankManager m_GameWinner;
 
 
     private void Start()
     {
-       
-        startWait = new WaitForSeconds(startDelay);
-        endWait = new WaitForSeconds(endDelay);
+        m_StartWait = new WaitForSeconds(m_StartDelay);
+        m_EndWait = new WaitForSeconds(m_EndDelay);
 
         SpawnAllTanks();
-        SetCameraTargets();
+        //SetCameraTargets();
 
-       
         StartCoroutine(GameLoop());
     }
 
-
     private void SpawnAllTanks()
     {
-       
-        for (int i = 0; i < tanks.Length; i++)
+        for (int i = 0; i < m_Tanks.Length; i++)
         {
-            
-            tanks[i].instance =
-                Instantiate(tankPrefab[i], Vector3.zero, Quaternion.Euler(Vector3.zero)) as GameObject;
-            tanks[i].playerNumber = i + 1;
-            tanks[i].Setup();
+            m_Tanks[i].m_Instance =
+                Instantiate(m_TankPrefab, m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
+            m_Tanks[i].m_PlayerNumber = i + 1;
+            m_Tanks[i].Setup();
         }
     }
 
-
-    private void SetCameraTargets()
+    /*private void SetCameraTargets()
     {
-        
-        Transform[] targets = new Transform[tanks.Length];
+        // Create a collection of transforms the same size as the number of tanks.
+        Transform[] targets = new Transform[m_Tanks.Length];
 
-        
+        // For each of these transforms...
         for (int i = 0; i < targets.Length; i++)
         {
-          
-            targets[i] = tanks[i].instance.transform;
+            // ... set it to the appropriate tank transform.
+            targets[i] = m_Tanks[i].m_Instance.transform;
         }
 
-        
-          //cameraControl.targets = targets;
-    }
+        // These are the targets the camera should follow.
+        m_CameraControl.m_Targets = targets;
+    }*/
 
-
-    
     private IEnumerator GameLoop()
     {
-        
         yield return StartCoroutine(RoundStarting());
 
-        
         yield return StartCoroutine(RoundPlaying());
 
-    
         yield return StartCoroutine(RoundEnding());
 
-        
-        if (gameWinner != null)
+        if (m_GameWinner != null)
         {
-
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(0);
         }
         else
         {
-            
             StartCoroutine(GameLoop());
         }
     }
@@ -94,34 +80,26 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator RoundStarting()
     {
-       
         ResetAllTanks();
         DisableTankControl();
 
-        
-        //cameraControl.SetStartPositionAndSize();
+        //m_CameraControl.SetStartPositionAndSize();
 
-        
-        roundNumber++;
-        messageText.text = "ROUND " + roundNumber;
+        m_RoundNumber++;
+        m_MessageText.text = "ROUND " + m_RoundNumber;
 
-       
-        yield return startWait;
+        yield return m_StartWait;
     }
 
 
     private IEnumerator RoundPlaying()
     {
-        
         EnableTankControl();
 
-        
-        messageText.text = string.Empty;
+        m_MessageText.text = string.Empty;
 
-       
         while (!OneTankLeft())
         {
-            
             yield return null;
         }
     }
@@ -129,132 +107,117 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator RoundEnding()
     {
-      
         DisableTankControl();
 
-        
-        roundWinner = null;
+        m_RoundWinner = null;
 
-       
-        roundWinner = GetRoundWinner();
+        m_RoundWinner = GetRoundWinner();
 
-        
-        if (roundWinner != null)
-            roundWinner.wins++;
+        if (m_RoundWinner != null)
+            m_RoundWinner.m_Wins++;
 
-      
-        gameWinner = GetGameWinner();
+        m_GameWinner = GetGameWinner();
 
-       
         string message = EndMessage();
-        messageText.text = message;
+        m_MessageText.text = message;
 
-       
-        yield return endWait;
+        yield return m_EndWait;
     }
 
 
-  
     private bool OneTankLeft()
     {
-       
+
         int numTanksLeft = 0;
 
-       
-        for (int i = 0; i < tanks.Length; i++)
+
+        for (int i = 0; i < m_Tanks.Length; i++)
         {
-            
-            if (tanks[i].instance.activeSelf)
+            if (m_Tanks[i].m_Instance.activeSelf)
                 numTanksLeft++;
         }
 
-     
         return numTanksLeft <= 1;
     }
 
-
-   
     private TankManager GetRoundWinner()
     {
-  
-        for (int i = 0; i < tanks.Length; i++)
+        for (int i = 0; i < m_Tanks.Length; i++)
         {
-           
-            if (tanks[i].instance.activeSelf)
-                return tanks[i];
+            if (m_Tanks[i].m_Instance.activeSelf)
+                return m_Tanks[i];
         }
-
-      
         return null;
     }
 
 
- 
+
     private TankManager GetGameWinner()
     {
-        
-        for (int i = 0; i < tanks.Length; i++)
+
+        for (int i = 0; i < m_Tanks.Length; i++)
         {
-            
-            if (tanks[i].wins == numRoundsToWin)
-                return tanks[i];
+
+            if (m_Tanks[i].m_Wins == m_NumRoundsToWin)
+                return m_Tanks[i];
         }
 
-       
+
         return null;
     }
 
 
-    
+
     private string EndMessage()
     {
-       
+
         string message = "DRAW!";
 
-        
-        if (roundWinner != null)
-            message = roundWinner.coloredPlayerText + " WINS THE ROUND!";
 
-      
+        if (m_RoundWinner != null)
+            message = m_RoundWinner.m_ColoredPlayerText + " WINS THE ROUND!";
+
+
         message += "\n\n\n\n";
 
-        for (int i = 0; i < tanks.Length; i++)
+
+        for (int i = 0; i < m_Tanks.Length; i++)
         {
-            message += tanks[i].coloredPlayerText + ": " + tanks[i].wins + " WINS\n";
+            message += m_Tanks[i].m_ColoredPlayerText + ": " + m_Tanks[i].m_Wins + " WINS\n";
         }
 
-       
-        if (gameWinner != null)
-            message = gameWinner.coloredPlayerText + " WINS THE GAME!";
+
+        if (m_GameWinner != null)
+            message = m_GameWinner.m_ColoredPlayerText + " WINS THE GAME!";
 
         return message;
     }
 
 
-    
+
     private void ResetAllTanks()
     {
-        for (int i = 0; i < tanks.Length; i++)
+        for (int i = 0; i < m_Tanks.Length; i++)
         {
-            tanks[i].Reset();
+            m_Tanks[i].Reset();
         }
     }
 
 
     private void EnableTankControl()
     {
-        for (int i = 0; i < tanks.Length; i++)
+        for (int i = 0; i < m_Tanks.Length; i++)
         {
-            tanks[i].EnableControl();
+            m_Tanks[i].EnableControl();
         }
     }
 
 
     private void DisableTankControl()
     {
-        for (int i = 0; i < tanks.Length; i++)
+        for (int i = 0; i < m_Tanks.Length; i++)
         {
-            tanks[i].DisableControl();
+            m_Tanks[i].DisableControl();
         }
     }
 }

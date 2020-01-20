@@ -8,29 +8,29 @@ public class canonball : MonoBehaviour
     public int speed;
     bool bounce;
     public ParticleSystem BounceExplosion;
-   
+
     void Start()
     {
         rb.AddRelativeForce(Vector3.forward * speed);
-        
+
 
     }
     private void OnCollisionEnter(Collision collision)
-   
+
     {
         if (bounce)
         {
-           
+
             Destroy(this.gameObject);
             Instantiate(BounceExplosion, transform.position, Quaternion.identity);
 
         }
         bounce = true;
-       
+
     }
-    
-  
-        private void OnTriggerEnter(Collider other)
+
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "P2")
         {
@@ -55,5 +55,5 @@ public class canonball : MonoBehaviour
         }
 
     }
-    
+
 }
