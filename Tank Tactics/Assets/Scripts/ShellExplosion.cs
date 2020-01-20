@@ -86,5 +86,4 @@ public class ShellExplosion : MonoBehaviour
 
         return damage;
     }
-
 }
