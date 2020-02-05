@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class TankMovement : MonoBehaviour
 {
     public int m_PlayerNumber = 1;
@@ -10,8 +10,11 @@ public class TankMovement : MonoBehaviour
     public float rotspeed;
     public float trotspeed;
     public TankShooting shootScript;
-    public AudioSource m_MovementAudio;
-    public AudioClip m_EngineDriving;
+
+    public Image popUpImage1;
+    public Image popUpImage2;
+    public Image popUpImage3;
+    public Image popUpImage4;
 
 
     int powerup = -1;
@@ -57,11 +60,11 @@ public class TankMovement : MonoBehaviour
                     GetComponent<TankShooting>().StartCoroutine("Multishot");
                     break;
                 //Mortar    
-                case 2:
+                /*case 2:
                     Mine.transform.position = transform.position;
                     Mine.transform.rotation = transform.rotation;
                     GameObject NewMine = Instantiate(Mine);
-                    break;
+                    break;*/
             }
             powerup = -1;
 
@@ -75,8 +78,24 @@ public class TankMovement : MonoBehaviour
             Destroy(other.gameObject);
             if (powerup == -1)
             {
-                powerup = Random.Range(0, 3);
+                powerup = Random.Range(0, 2);
                 Debug.Log(powerup);
+            }
+            if (m_PlayerNumber == 1)
+            {
+                popUpImage1.gameObject.SetActive(true);
+            }
+            else if(m_PlayerNumber == 2)
+            {
+                popUpImage2.gameObject.SetActive(true);
+            }
+            else if (m_PlayerNumber == 3)
+            {
+                popUpImage3.gameObject.SetActive(true);
+            }
+            else
+            {
+                popUpImage4.gameObject.SetActive(true);
             }
         }
     }
