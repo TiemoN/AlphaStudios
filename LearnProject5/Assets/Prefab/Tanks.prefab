@@ -395,14 +395,7 @@ MonoBehaviour:
   rotspeed: 10
   trotspeed: 10
   shootScript: {fileID: 8154280591567480958}
-  popUpImage1: {fileID: 2988229348013179039, guid: c19ebe0dca51fc346be9d1ee20d1b14e,
-    type: 3}
-  popUpImage2: {fileID: 8198003240295927325, guid: 813985a63210c6348a62490ca0a9c127,
-    type: 3}
-  popUpImage3: {fileID: 3012574680018518367, guid: a8a755fe11e82884195f5545e41865dd,
-    type: 3}
-  popUpImage4: {fileID: 6886326003718901297, guid: 6ac2c83deb6b57748b28c01d2968c47f,
-    type: 3}
+  powerUpCount: 3
   rb: {fileID: 5105829712570812519}
 --- !u!114 &57649564753193645
 MonoBehaviour:
@@ -433,6 +426,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerNumber: 1
   Shell: {fileID: 2726468532280999951, guid: e5929b4f45c312c4185c6b02c4ca37ec, type: 3}
+  penetrationShell: {fileID: 2726468532280999951, guid: 6db7934b9d2df4b4296d648ef75ec4d7,
+    type: 3}
   setcooldown: 1
   ShootParticle: {fileID: 456713704676824583, guid: bac1c3fb787388e488bc1683ed420c5a,
     type: 3}

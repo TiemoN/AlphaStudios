@@ -83,7 +83,7 @@ public class ShellExplosion : MonoBehaviour
         }
         bounce = true;
     }
-    
+
     private float CalculateDamage(Vector3 targetPosition)
     {
         // Create a vector from the shell to the target.

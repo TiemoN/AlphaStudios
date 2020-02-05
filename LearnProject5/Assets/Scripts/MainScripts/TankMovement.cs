@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+[RequireComponent(typeof(TankShooting))]
 public class TankMovement : MonoBehaviour
 {
     public int m_PlayerNumber = 1;
@@ -10,16 +12,72 @@ public class TankMovement : MonoBehaviour
     public float rotspeed;
     public float trotspeed;
     public TankShooting shootScript;
+    [SerializeField] int powerUpCount = 3;
 
-    public Image popUpImage1;
-    public Image popUpImage2;
-    public Image popUpImage3;
-    public Image popUpImage4;
+    private Image uiPowerUpLogo1;
+    private Image uiPowerUpLogo2;
+    private Image uiPowerUpLogo3;
+    private Image uiPowerUpLogo4;
+
+    private Image uiSpeedBoostLogo1;
+    private Image uiSpeedBoostLogo2;
+    private Image uiSpeedBoostLogo3;
+    private Image uiSpeedBoostLogo4;
+
+    private Image uiPenShotLogo1;
+    private Image uiPenShotLogo2;
+    private Image uiPenShotLogo3;
+    private Image uiPenShotLogo4;
+
+    //public Image popUpImage1;
+    //public Image popUpImage2;
+    //public Image popUpImage3;
+    //public Image popUpImage4;
 
 
     int powerup = -1;
 
     public Rigidbody rb;
+
+    private void Awake()
+    {
+        uiPowerUpLogo1 = GameObject.Find("RapidFire IMAGE P1").GetComponent<Image>();
+        uiPowerUpLogo2 = GameObject.Find("RapidFire IMAGE P2").GetComponent<Image>();
+        uiPowerUpLogo3 = GameObject.Find("RapidFire IMAGE P3").GetComponent<Image>();
+        uiPowerUpLogo4 = GameObject.Find("RapidFire IMAGE P4").GetComponent<Image>();
+
+        uiSpeedBoostLogo1 = GameObject.Find("SpeedBoost IMAGE P1").GetComponent<Image>();
+        uiSpeedBoostLogo2 = GameObject.Find("SpeedBoost IMAGE P2").GetComponent<Image>();
+        uiSpeedBoostLogo3 = GameObject.Find("SpeedBoost IMAGE P3").GetComponent<Image>();
+        uiSpeedBoostLogo4 = GameObject.Find("SpeedBoost IMAGE P4").GetComponent<Image>();
+
+        uiPenShotLogo1 = GameObject.Find("PenShot IMAGE P1").GetComponent<Image>();
+        uiPenShotLogo2 = GameObject.Find("PenShot IMAGE P2").GetComponent<Image>();
+        uiPenShotLogo3 = GameObject.Find("PenShot IMAGE P3").GetComponent<Image>();
+        uiPenShotLogo4 = GameObject.Find("PenShot IMAGE P4").GetComponent<Image>();
+    }
+    private void Start()
+    {
+        if (!shootScript)
+        {
+            shootScript = GetComponent<TankShooting>();
+        }
+
+        uiPowerUpLogo1.gameObject.SetActive(false);
+        uiPowerUpLogo2.gameObject.SetActive(false);
+        uiPowerUpLogo3.gameObject.SetActive(false);
+        uiPowerUpLogo4.gameObject.SetActive(false);
+
+        uiSpeedBoostLogo1.gameObject.SetActive(false);
+        uiSpeedBoostLogo2.gameObject.SetActive(false);
+        uiSpeedBoostLogo3.gameObject.SetActive(false);
+        uiSpeedBoostLogo4.gameObject.SetActive(false);
+
+        uiPenShotLogo1.gameObject.SetActive(false);
+        uiPenShotLogo2.gameObject.SetActive(false);
+        uiPenShotLogo3.gameObject.SetActive(false);
+        uiPenShotLogo4.gameObject.SetActive(false);
+    }
 
     private void Update()
     {
@@ -49,22 +107,74 @@ public class TankMovement : MonoBehaviour
         }
         if (Input.GetAxis("GPLeftTrigger" + m_PlayerNumber) != 0)
         {
+
+
             switch (powerup)
             {
                 //speed
                 case 0:
                     StartCoroutine("Speedboost");
+
+                    if (m_PlayerNumber == 1)
+                    {
+                        uiSpeedBoostLogo1.gameObject.SetActive(false);
+                    }
+                    else if (m_PlayerNumber == 2)
+                    {
+                        uiSpeedBoostLogo2.gameObject.SetActive(false);
+                    }
+                    else if (m_PlayerNumber == 3)
+                    {
+                        uiSpeedBoostLogo3.gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        uiSpeedBoostLogo4.gameObject.SetActive(false);
+                    }
+
                     break;
                 //live
                 case 1:
-                    GetComponent<TankShooting>().StartCoroutine("Multishot");
+                    shootScript.StartCoroutine("Multishot");
+                    if (m_PlayerNumber == 1)
+                    {
+                        uiPowerUpLogo1.gameObject.SetActive(false);
+                    }
+                    else if (m_PlayerNumber == 2)
+                    {
+                        uiPowerUpLogo2.gameObject.SetActive(false);
+                    }
+                    else if (m_PlayerNumber == 3)
+                    {
+                        uiPowerUpLogo3.gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        uiPowerUpLogo4.gameObject.SetActive(false);
+                    }
+
                     break;
-                //Mortar    
-                /*case 2:
-                    Mine.transform.position = transform.position;
-                    Mine.transform.rotation = transform.rotation;
-                    GameObject NewMine = Instantiate(Mine);
-                    break;*/
+                //PenShot   
+                case 2:
+                    shootScript.FirePenetrationShot();
+
+                    if (m_PlayerNumber == 1)
+                    {
+                        uiPenShotLogo1.gameObject.SetActive(false);
+                    }
+                    else if (m_PlayerNumber == 2)
+                    {
+                        uiPenShotLogo2.gameObject.SetActive(false);
+                    }
+                    else if (m_PlayerNumber == 3)
+                    {
+                        uiPenShotLogo3.gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        uiPenShotLogo4.gameObject.SetActive(false);
+                    }
+                    break;
             }
             powerup = -1;
 
@@ -75,28 +185,77 @@ public class TankMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Item"))
         {
-            Destroy(other.gameObject);
             if (powerup == -1)
             {
-                powerup = Random.Range(0, 2);
+                Destroy(other.gameObject);
+                powerup = Random.Range(0, powerUpCount);
                 Debug.Log(powerup);
             }
-            if (m_PlayerNumber == 1)
+
+            switch (powerup)
             {
-                popUpImage1.gameObject.SetActive(true);
+                //speed
+                case 0:
+
+                    if (m_PlayerNumber == 1)
+                    {
+                        uiSpeedBoostLogo1.gameObject.SetActive(true);
+                    }
+                    else if (m_PlayerNumber == 2)
+                    {
+                        uiSpeedBoostLogo2.gameObject.SetActive(true);
+                    }
+                    else if (m_PlayerNumber == 3)
+                    {
+                        uiSpeedBoostLogo3.gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        uiSpeedBoostLogo4.gameObject.SetActive(true);
+                    }
+
+                    break;
+                //live
+                case 1:
+                    if (m_PlayerNumber == 1)
+                    {
+                        uiPowerUpLogo1.gameObject.SetActive(true);
+                    }
+                    else if (m_PlayerNumber == 2)
+                    {
+                        uiPowerUpLogo2.gameObject.SetActive(true);
+                    }
+                    else if (m_PlayerNumber == 3)
+                    {
+                        uiPowerUpLogo3.gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        uiPowerUpLogo4.gameObject.SetActive(true);
+                    }
+
+                    break;
+                //PenShot   
+                case 2:
+                    if (m_PlayerNumber == 1)
+                    {
+                        uiPenShotLogo1.gameObject.SetActive(true);
+                    }
+                    else if (m_PlayerNumber == 2)
+                    {
+                        uiPenShotLogo2.gameObject.SetActive(true);
+                    }
+                    else if (m_PlayerNumber == 3)
+                    {
+                        uiPenShotLogo3.gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        uiPenShotLogo4.gameObject.SetActive(true);
+                    }
+                    break;
             }
-            else if(m_PlayerNumber == 2)
-            {
-                popUpImage2.gameObject.SetActive(true);
-            }
-            else if (m_PlayerNumber == 3)
-            {
-                popUpImage3.gameObject.SetActive(true);
-            }
-            else
-            {
-                popUpImage4.gameObject.SetActive(true);
-            }
+
         }
     }
 
@@ -108,8 +267,10 @@ public class TankMovement : MonoBehaviour
 
     }
 
-   
+
 }
+
+
 
 
 
