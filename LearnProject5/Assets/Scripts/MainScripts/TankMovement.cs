@@ -6,13 +6,19 @@ using UnityEngine.UI;
 [RequireComponent(typeof(TankShooting))]
 public class TankMovement : MonoBehaviour
 {
+    public TankShooting shootScript;
     public int m_PlayerNumber = 1;
-    public GameObject TankTurret, TankBody, Canon, Bombe, Mine;
+    public GameObject TankTurret, TankBody, Canon;
+    public Rigidbody rb;
+    [Space]
+    public AudioSource SpeedBoostSound;
+    //public AudioSource MovementSound;
+    [Space]
     public float speed;
     public float rotspeed;
     public float trotspeed;
-    public TankShooting shootScript;
     [SerializeField] int powerUpCount = 3;
+    int powerup = -1;
 
     private Image uiPowerUpLogo1;
     private Image uiPowerUpLogo2;
@@ -28,16 +34,6 @@ public class TankMovement : MonoBehaviour
     private Image uiPenShotLogo2;
     private Image uiPenShotLogo3;
     private Image uiPenShotLogo4;
-
-    //public Image popUpImage1;
-    //public Image popUpImage2;
-    //public Image popUpImage3;
-    //public Image popUpImage4;
-
-
-    int powerup = -1;
-
-    public Rigidbody rb;
 
     private void Awake()
     {
@@ -111,7 +107,7 @@ public class TankMovement : MonoBehaviour
 
             switch (powerup)
             {
-                //speed
+                //SpeedBoost
                 case 0:
                     StartCoroutine("Speedboost");
 
@@ -133,7 +129,7 @@ public class TankMovement : MonoBehaviour
                     }
 
                     break;
-                //live
+                //RapidFire
                 case 1:
                     shootScript.StartCoroutine("Multishot");
                     if (m_PlayerNumber == 1)
@@ -194,7 +190,7 @@ public class TankMovement : MonoBehaviour
 
             switch (powerup)
             {
-                //speed
+                //SpeedBoost
                 case 0:
 
                     if (m_PlayerNumber == 1)
@@ -215,7 +211,7 @@ public class TankMovement : MonoBehaviour
                     }
 
                     break;
-                //live
+                //RapidFire
                 case 1:
                     if (m_PlayerNumber == 1)
                     {
@@ -261,10 +257,11 @@ public class TankMovement : MonoBehaviour
 
     IEnumerator Speedboost()
     {
+        SpeedBoostSound.Play();
+
         speed = speed * 2;
         yield return new WaitForSeconds(5);
         speed = speed / 2;
-
     }
 
 

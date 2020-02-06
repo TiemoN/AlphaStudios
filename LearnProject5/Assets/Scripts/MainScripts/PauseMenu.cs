@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    public AudioSource ScrollingSound;
+
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI, settingsMenuUI;
@@ -34,6 +36,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        ScrollingSound.Play();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -41,6 +44,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
+        ScrollingSound.Play();
         Debug.Log("Pause...");
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
@@ -51,6 +55,7 @@ public class PauseMenu : MonoBehaviour
 
     public void SettingsMenu()
     {
+        ScrollingSound.Play();
         pauseMenuUI.SetActive(false);
         settingsMenuUI.SetActive(true);
         Time.timeScale = 0f;
@@ -59,18 +64,21 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
+        ScrollingSound.Play();
         SceneManager.LoadScene("Deathmatch");
         Time.timeScale = 1f;
     }
 
     public void LoadMenu()
     {
+        ScrollingSound.Play();
         SceneManager.LoadScene("Menu");
         Time.timeScale = 1f;
     }
 
     public void QuitGame()
     {
+        ScrollingSound.Play();
         Debug.Log("Quitting game...");
         Application.Quit();
     }

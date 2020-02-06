@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MenuHandler : MonoBehaviour
 {
+    public AudioSource ScrollingSound;
     public GameObject Modus, HowToPlay, Options, Credits;
     private void Start()
     {
@@ -12,7 +13,7 @@ public class MenuHandler : MonoBehaviour
     
     public void ModusMenu()
     {
-        //MainMenu.SetActive(true);
+        ScrollingSound.Play();
         Modus.SetActive(true); 
         HowToPlay.SetActive(false);
         Options.SetActive(false);
@@ -21,6 +22,7 @@ public class MenuHandler : MonoBehaviour
    
     public void HowToPlayMenu()
     {
+        ScrollingSound.Play();
         Modus.SetActive(false);
         HowToPlay.SetActive(true);
         Options.SetActive(false);
@@ -28,6 +30,7 @@ public class MenuHandler : MonoBehaviour
     }
     public void OptionsMenu()
     {
+        ScrollingSound.Play();
         Modus.SetActive(false);
         HowToPlay.SetActive(false);
         Options.SetActive(true);
@@ -35,6 +38,7 @@ public class MenuHandler : MonoBehaviour
     }
     public void CreditsMenu()
     {
+        ScrollingSound.Play();
         Modus.SetActive(false);
         HowToPlay.SetActive(false);
         Options.SetActive(false);
