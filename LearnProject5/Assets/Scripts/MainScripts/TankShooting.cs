@@ -5,17 +5,14 @@ using UnityEngine.UI;
 public class TankShooting : MonoBehaviour
 {
     public int m_PlayerNumber = 1;
-    public GameObject Shell;
+    [SerializeField] GameObject Shell;
     [SerializeField] GameObject penetrationShell;
-    public float setcooldown;
-    float cooldown;
-    public ParticleSystem ShootParticle;
     public Transform m_FireTransform;
+    //public ParticleSystem m_ShootParticle;
     private float m_CurrentLaunchForce = 30f;
+    float cooldown;
 
 
-
-    private bool m_Fired;
 
     private void Start()
     {
@@ -32,7 +29,6 @@ public class TankShooting : MonoBehaviour
         cooldown -= Time.deltaTime;
         if (Input.GetAxis("GPRightTrigger" + m_PlayerNumber) > 0)
         {
-
             if (cooldown <= 0)
             {
                 Fire();
