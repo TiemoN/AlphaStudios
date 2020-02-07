@@ -8,7 +8,7 @@ public class TankShooting : MonoBehaviour
     [SerializeField] GameObject Shell;
     [SerializeField] GameObject penetrationShell;
     public Transform m_FireTransform;
-    //public ParticleSystem m_ShootParticle;
+    public ParticleSystem m_ShootParticle;
     private float m_CurrentLaunchForce = 30f;
     float cooldown;
 
@@ -32,6 +32,7 @@ public class TankShooting : MonoBehaviour
             if (cooldown <= 0)
             {
                 Fire();
+                m_ShootParticle = Instantiate(m_ShootParticle, m_FireTransform.position, m_FireTransform.rotation);
                 cooldown = 2f;
             }
         }
@@ -40,6 +41,7 @@ public class TankShooting : MonoBehaviour
     public IEnumerator Multishot()
     {
         Fire();
+        m_ShootParticle = Instantiate(m_ShootParticle, m_FireTransform.position, m_FireTransform.rotation);
         yield return new WaitForSeconds(0.1f);
         Fire();
         yield return new WaitForSeconds(0.2f);
@@ -53,14 +55,14 @@ public class TankShooting : MonoBehaviour
     private void Fire()
     {
         GameObject shootShell = Instantiate(Shell, m_FireTransform.position, m_FireTransform.rotation);
-
+        
         shootShell.GetComponent<Rigidbody>().velocity = m_CurrentLaunchForce * m_FireTransform.forward;
     }
 
     public void FirePenetrationShot()
     {
         GameObject shootShell = Instantiate(penetrationShell, m_FireTransform.position, m_FireTransform.rotation);
-
+        m_ShootParticle = Instantiate(m_ShootParticle, m_FireTransform.position, m_FireTransform.rotation);
         shootShell.GetComponent<Rigidbody>().velocity = m_CurrentLaunchForce * m_FireTransform.forward;
     }
 

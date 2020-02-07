@@ -219,7 +219,6 @@ MonoBehaviour:
   m_StartingHealth: 1
   m_ExplosionPrefab: {fileID: 4430130037600731494, guid: 3c92f73184b76ac4eac100352a025da4,
     type: 3}
-  m_ExplosionAudio: {fileID: -933577735896071796}
 --- !u!114 &8154280591567480958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,6 +236,8 @@ MonoBehaviour:
   penetrationShell: {fileID: 2726468532280999951, guid: 6db7934b9d2df4b4296d648ef75ec4d7,
     type: 3}
   m_FireTransform: {fileID: 2390867222404523885}
+  m_ShootParticle: {fileID: 456713704676824583, guid: bac1c3fb787388e488bc1683ed420c5a,
+    type: 3}
 --- !u!82 &-3280450919242921826
 AudioSource:
   m_ObjectHideFlags: 0

@@ -44,7 +44,7 @@ ParticleSystemForceField:
     m_StartRange: 0
     m_EndRange: 10.94177
     m_Length: 1
-    m_GravityFocus: 0
+    m_GravityFocus: 0.61
     m_RotationRandomness: {x: 0.21, y: 0.16}
     m_DirectionCurveX:
       serializedVersion: 2

@@ -260,7 +260,7 @@ public class TankMovement : MonoBehaviour
         SpeedBoostSound.Play();
 
         speed = speed * 2;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         speed = speed / 2;
     }
 

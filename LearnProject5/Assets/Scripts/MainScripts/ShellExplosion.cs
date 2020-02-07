@@ -3,9 +3,10 @@
 public class ShellExplosion : MonoBehaviour
 {
     public LayerMask m_TankMask;                        
-    //public ParticleSystem m_ExplosionParticles;        
+    public ParticleSystem m_BounceParticles;        
     //public AudioSource m_ExplosionAudio;               
     public AudioSource m_BounceAudio;
+    public AudioSource m_BounceDestroyAudio;
     //public AudioSource m_ShellDestroySound;
     public float m_MaxDamage = 100f;                   
     public float m_ExplosionForce = 1000f;              
@@ -70,7 +71,7 @@ public class ShellExplosion : MonoBehaviour
 
             // Once the particles have finished, destroy the gameobject they are on.
             //Destroy(m_ExplosionParticles.gameObject, m_ExplosionParticles.main.duration);
-
+            
             // Destroy the shell.
             Destroy(gameObject);
         }
@@ -79,9 +80,11 @@ public class ShellExplosion : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         m_BounceAudio.Play();
-
+        
         if (bounce)
         {
+            m_BounceParticles = Instantiate(m_BounceParticles, transform.position, Quaternion.Euler(-90f, 0f, 0f));
+            
             Destroy(this.gameObject);
         }            
         bounce = true;

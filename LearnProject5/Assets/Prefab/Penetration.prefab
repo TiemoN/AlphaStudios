@@ -78,21 +78,30 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.125
+        time: 0.02702713
+        value: 0.546875
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -0.626302
+        outSlope: -0.626302
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.1666667
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.990566, g: 0.31634283, b: 0.21960661, a: 1}
+      key1: {r: 1, g: 0.69765794, b: 0.23113209, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -242,7 +251,7 @@ MonoBehaviour:
   m_TankMask:
     serializedVersion: 2
     m_Bits: 256
-  m_ExplosionParticles: {fileID: 4168414720921090735, guid: 330eb5699ee9bee4291177b489271cef,
+  m_BounceParticles: {fileID: 598289774218362627, guid: b944611ad6c06cf4785b9591fdba931e,
     type: 3}
   m_BounceAudio: {fileID: 1554673322243592632}
   m_MaxDamage: 1000
