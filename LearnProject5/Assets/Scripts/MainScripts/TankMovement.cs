@@ -17,8 +17,10 @@ public class TankMovement : MonoBehaviour
     //public AudioSource MovementSound;
     [Header("Tank Settings:")]
     [Header("GAME DESIGN")]
-    [Range(1,20)]
-    public float tankSpeed;
+    [Range(1, 20)]
+    public float tankSpeed = 10f;
+    [Range(1, 30)]
+    public float boostSpeed = 20f;
     [Range(1, 20)]
     public float tankRotationSpeed;
     [Range(1, 20)]
@@ -41,7 +43,7 @@ public class TankMovement : MonoBehaviour
     private Image uiPenShotLogo2;
     private Image uiPenShotLogo3;
     private Image uiPenShotLogo4;
-
+   
     private void Awake()
     {
         uiPowerUpLogo1 = GameObject.Find("RapidFire IMAGE P1").GetComponent<Image>();
@@ -249,7 +251,6 @@ public class TankMovement : MonoBehaviour
                     }
                     break;
             }
-
         }
     }
 
@@ -257,12 +258,10 @@ public class TankMovement : MonoBehaviour
     {
         SpeedBoostSound.Play();
 
-        tankSpeed = tankSpeed * 2;
+        tankSpeed = boostSpeed;
         yield return new WaitForSeconds(3);
-        tankSpeed = tankSpeed / 2;
+        tankSpeed = 10f;
     }
-
-
 }
 
 
