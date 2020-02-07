@@ -121,13 +121,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9135522493152389761}
+  - component: {fileID: -3280450919242921826}
+  - component: {fileID: -933577735896071796}
   - component: {fileID: 1480750236727668413}
   - component: {fileID: 5105829712570812519}
   - component: {fileID: 788765257190309894}
-  - component: {fileID: 57649564753193645}
   - component: {fileID: 8154280591567480958}
-  - component: {fileID: -3280450919242921826}
-  - component: {fileID: -933577735896071796}
+  - component: {fileID: 57649564753193645}
   m_Layer: 8
   m_Name: Tanks
   m_TagString: Players
@@ -152,92 +152,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1480750236727668413
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5232264223260055698}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1414188, y: 1.516856, z: 1.2271467}
-  m_Center: {x: 0.0025193554, y: 0.2882465, z: 0.06932084}
---- !u!54 &5105829712570812519
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5232264223260055698}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 1000
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
---- !u!114 &788765257190309894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5232264223260055698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e662765a227d3d5419eb5529c1de9f85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootScript: {fileID: 8154280591567480958}
-  m_PlayerNumber: 1
-  TankTurret: {fileID: 4964913388850633793}
-  TankBody: {fileID: 7274732842481050125}
-  Canon: {fileID: 2623503371865247586}
-  rb: {fileID: 5105829712570812519}
-  SpeedBoostSound: {fileID: -3280450919242921826}
-  speed: 10
-  rotspeed: 10
-  trotspeed: 10
-  powerUpCount: 3
---- !u!114 &57649564753193645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5232264223260055698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75bc599c05560944ba3cb5daa9c26714, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_StartingHealth: 1
-  m_ExplosionPrefab: {fileID: 4430130037600731494, guid: 3c92f73184b76ac4eac100352a025da4,
-    type: 3}
---- !u!114 &8154280591567480958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5232264223260055698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32e1c76427dce9e409b0808fbfb3c745, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PlayerNumber: 1
-  Shell: {fileID: 2726468532280999951, guid: e5929b4f45c312c4185c6b02c4ca37ec, type: 3}
-  penetrationShell: {fileID: 2726468532280999951, guid: 6db7934b9d2df4b4296d648ef75ec4d7,
-    type: 3}
-  m_FireTransform: {fileID: 2390867222404523885}
-  m_ShootParticle: {fileID: 456713704676824583, guid: bac1c3fb787388e488bc1683ed420c5a,
-    type: 3}
 --- !u!82 &-3280450919242921826
 AudioSource:
   m_ObjectHideFlags: 0
@@ -430,6 +344,97 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &1480750236727668413
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5232264223260055698}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1414188, y: 1.516856, z: 1.2271467}
+  m_Center: {x: 0.0025193554, y: 0.2882465, z: 0.06932084}
+--- !u!54 &5105829712570812519
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5232264223260055698}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 1000
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!114 &788765257190309894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5232264223260055698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e662765a227d3d5419eb5529c1de9f85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootScript: {fileID: 8154280591567480958}
+  m_PlayerNumber: 1
+  TankTurret: {fileID: 4964913388850633793}
+  TankBody: {fileID: 7274732842481050125}
+  TankCanon: {fileID: 2623503371865247586}
+  rb: {fileID: 5105829712570812519}
+  SpeedBoostSound: {fileID: -3280450919242921826}
+  tankSpeed: 10
+  tankRotationSpeed: 10
+  turretTurnSpeed: 10
+  powerUpCount: 3
+--- !u!114 &8154280591567480958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5232264223260055698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e1c76427dce9e409b0808fbfb3c745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayerNumber: 1
+  Shell: {fileID: 2726468532280999951, guid: e5929b4f45c312c4185c6b02c4ca37ec, type: 3}
+  penetrationShell: {fileID: 2726468532280999951, guid: 6db7934b9d2df4b4296d648ef75ec4d7,
+    type: 3}
+  m_FireTransform: {fileID: 2390867222404523885}
+  m_ShootParticle: {fileID: 456713704676824583, guid: bac1c3fb787388e488bc1683ed420c5a,
+    type: 3}
+  projectileSpeed: 30
+  setShootCooldown: 2
+  rapidfireShoot1Cooldown: 0.1
+  rapidfireShoot2Cooldown: 0.2
+  rapidfireShoot3Cooldown: 0.3
+--- !u!114 &57649564753193645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5232264223260055698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75bc599c05560944ba3cb5daa9c26714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExplosionPrefab: {fileID: 4430130037600731494, guid: 3c92f73184b76ac4eac100352a025da4,
+    type: 3}
+  tankLife: 1
 --- !u!1 &5566332439225192334
 GameObject:
   m_ObjectHideFlags: 0

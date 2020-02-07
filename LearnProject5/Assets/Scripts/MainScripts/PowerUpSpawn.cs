@@ -5,15 +5,12 @@ using UnityEngine;
 public class PowerUpSpawn : MonoBehaviour
 {
     public float m_StartDelay = 10f;
-    //public float m_EndDelay = 3f;
     public GameObject powerUpSpawn;
     [SerializeField] int maximumCountOfItemsPerDraw = 2;
     public Transform[] loQuadrant;//UL
     public Transform[] luQuadrant;//LL
     public Transform[] roQuadrant;//UR
     public Transform[] ruQuadrant;//LR
-
-    private int arrayIndex;
 
     bool isRoundEnded = false;
     public void DestroyPowerUps()

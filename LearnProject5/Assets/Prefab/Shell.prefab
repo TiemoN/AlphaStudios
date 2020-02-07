@@ -147,11 +147,11 @@ GameObject:
   - component: {fileID: 280166984754661195}
   - component: {fileID: 8303542887732496787}
   - component: {fileID: 3579586146837677443}
-  - component: {fileID: 6099250447970513853}
-  - component: {fileID: 8264143378438919726}
-  - component: {fileID: 5504629613933695544}
   - component: {fileID: -2330656272567780768}
   - component: {fileID: 7806382876077816638}
+  - component: {fileID: 6099250447970513853}
+  - component: {fileID: 5504629613933695544}
+  - component: {fileID: 8264143378438919726}
   m_Layer: 0
   m_Name: Shell
   m_TagString: Shell
@@ -220,60 +220,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!54 &6099250447970513853
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2726468532280999951}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 3
---- !u!114 &8264143378438919726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2726468532280999951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43267b0a418757541ae57762f038ce30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TankMask:
-    serializedVersion: 2
-    m_Bits: 256
-  m_BounceParticles: {fileID: 598289774218362627, guid: b944611ad6c06cf4785b9591fdba931e,
-    type: 3}
-  m_BounceAudio: {fileID: 7806382876077816638}
-  m_BounceDestroyAudio: {fileID: 0}
-  m_MaxDamage: 1000
-  m_ExplosionForce: 1000
-  m_MaxLifeTime: 5
-  m_ExplosionRadius: 2
-  speed: 0
-  rb: {fileID: 6099250447970513853}
---- !u!135 &5504629613933695544
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2726468532280999951}
-  m_Material: {fileID: 13400000, guid: 7ac45c787e2054c419446798ed913535, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &-2330656272567780768
 AudioSource:
   m_ObjectHideFlags: 0
@@ -466,3 +412,52 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!54 &6099250447970513853
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2726468532280999951}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 3
+--- !u!135 &5504629613933695544
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2726468532280999951}
+  m_Material: {fileID: 13400000, guid: 7ac45c787e2054c419446798ed913535, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8264143378438919726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2726468532280999951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43267b0a418757541ae57762f038ce30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TankMask:
+    serializedVersion: 2
+    m_Bits: 256
+  rb: {fileID: 6099250447970513853}
+  m_BounceParticles: {fileID: 598289774218362627, guid: b944611ad6c06cf4785b9591fdba931e,
+    type: 3}
+  m_BounceAudio: {fileID: 7806382876077816638}
+  shellDamage: 100

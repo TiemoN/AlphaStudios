@@ -6,18 +6,25 @@ using UnityEngine.UI;
 [RequireComponent(typeof(TankShooting))]
 public class TankMovement : MonoBehaviour
 {
+    [Header("Codes and Objects:")]
+    [Header("ONLY PROGRAMMER!!!")]
     public TankShooting shootScript;
     public int m_PlayerNumber = 1;
-    public GameObject TankTurret, TankBody, Canon;
+    public GameObject TankTurret, TankBody, TankCanon;
     public Rigidbody rb;
-    [Space]
+    [Header("SFX:")]
     public AudioSource SpeedBoostSound;
     //public AudioSource MovementSound;
-    [Space]
-    public float speed;
-    public float rotspeed;
-    public float trotspeed;
+    [Header("Tank Settings:")]
+    [Header("GAME DESIGN")]
+    [Range(1,20)]
+    public float tankSpeed;
+    [Range(1, 20)]
+    public float tankRotationSpeed;
+    [Range(1, 20)]
+    public float turretTurnSpeed;
     [SerializeField] int powerUpCount = 3;
+    
     int powerup = -1;
 
     private Image uiPowerUpLogo1;
@@ -80,10 +87,10 @@ public class TankMovement : MonoBehaviour
         rb.velocity = Vector3.zero;
 
         Vector3 newPos = transform.position;
-        newPos += new Vector3(0, 0, speed * 1) * Input.GetAxis("GPVertical" + m_PlayerNumber) * Time.deltaTime;
-        newPos += new Vector3(speed * -1, 0, 0) * Input.GetAxis("GPHorizontal" + m_PlayerNumber) * Time.deltaTime;
+        newPos += new Vector3(0, 0, tankSpeed * 1) * Input.GetAxis("GPVertical" + m_PlayerNumber) * Time.deltaTime;
+        newPos += new Vector3(tankSpeed * -1, 0, 0) * Input.GetAxis("GPHorizontal" + m_PlayerNumber) * Time.deltaTime;
 
-        float turn = trotspeed * Time.deltaTime;
+        float turn = tankRotationSpeed * Time.deltaTime;
         if (newPos != transform.position)
         {
             Quaternion targetRotation = Quaternion.LookRotation(newPos - transform.position);
@@ -94,17 +101,15 @@ public class TankMovement : MonoBehaviour
         if (Input.GetAxis("GPVerticalRight" + m_PlayerNumber) != 0 || Input.GetAxis("GPHorizontalRight" + m_PlayerNumber) != 0)
         {
             Vector3 ttnP = TankTurret.transform.position;
-            ttnP += new Vector3(0, 0, speed * -1) * Input.GetAxis("GPVerticalRight" + m_PlayerNumber) * Time.deltaTime;
-            ttnP += new Vector3(speed * 1, 0, 0) * Input.GetAxis("GPHorizontalRight" + m_PlayerNumber) * Time.deltaTime;
-            float ttTurn = rotspeed * Time.deltaTime;
+            ttnP += new Vector3(0, 0, tankSpeed * -1) * Input.GetAxis("GPVerticalRight" + m_PlayerNumber) * Time.deltaTime;
+            ttnP += new Vector3(tankSpeed * 1, 0, 0) * Input.GetAxis("GPHorizontalRight" + m_PlayerNumber) * Time.deltaTime;
+            float ttTurn = turretTurnSpeed * Time.deltaTime;
 
             Quaternion turretRotation = Quaternion.LookRotation(ttnP - TankTurret.transform.position);
             TankTurret.transform.rotation = Quaternion.Slerp(TankTurret.transform.rotation, turretRotation, ttTurn);
         }
         if (Input.GetAxis("GPLeftTrigger" + m_PlayerNumber) != 0)
         {
-
-
             switch (powerup)
             {
                 //SpeedBoost
@@ -127,7 +132,6 @@ public class TankMovement : MonoBehaviour
                     {
                         uiSpeedBoostLogo4.gameObject.SetActive(false);
                     }
-
                     break;
                 //RapidFire
                 case 1:
@@ -148,7 +152,6 @@ public class TankMovement : MonoBehaviour
                     {
                         uiPowerUpLogo4.gameObject.SetActive(false);
                     }
-
                     break;
                 //PenShot   
                 case 2:
@@ -173,7 +176,6 @@ public class TankMovement : MonoBehaviour
                     break;
             }
             powerup = -1;
-
         }
     }
 
@@ -187,12 +189,10 @@ public class TankMovement : MonoBehaviour
                 powerup = Random.Range(0, powerUpCount);
                 Debug.Log(powerup);
             }
-
             switch (powerup)
             {
                 //SpeedBoost
                 case 0:
-
                     if (m_PlayerNumber == 1)
                     {
                         uiSpeedBoostLogo1.gameObject.SetActive(true);
@@ -209,7 +209,6 @@ public class TankMovement : MonoBehaviour
                     {
                         uiSpeedBoostLogo4.gameObject.SetActive(true);
                     }
-
                     break;
                 //RapidFire
                 case 1:
@@ -229,7 +228,6 @@ public class TankMovement : MonoBehaviour
                     {
                         uiPowerUpLogo4.gameObject.SetActive(true);
                     }
-
                     break;
                 //PenShot   
                 case 2:
@@ -259,9 +257,9 @@ public class TankMovement : MonoBehaviour
     {
         SpeedBoostSound.Play();
 
-        speed = speed * 2;
+        tankSpeed = tankSpeed * 2;
         yield return new WaitForSeconds(3);
-        speed = speed / 2;
+        tankSpeed = tankSpeed / 2;
     }
 
 
