@@ -9548,9 +9548,9 @@ GameObject:
   - component: {fileID: 1027218463348750580}
   - component: {fileID: 5852614205787739303}
   - component: {fileID: 1446679251362433989}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: TankTurret
-  m_TagString: Players
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9630,8 +9630,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.026060358, y: 0.003785109, z: 0.013159049}
-  m_Center: {x: -0.00009086193, y: 0.0032641394, z: 0.05808361}
+  m_Size: {x: 0.026060358, y: 0.0029799724, z: 0.017184697}
+  m_Center: {x: -0.00009086193, y: 0.016682928, z: 0.060096424}
 --- !u!1 &5232264223260055698
 GameObject:
   m_ObjectHideFlags: 0

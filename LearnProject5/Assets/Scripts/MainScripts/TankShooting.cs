@@ -62,7 +62,6 @@ public class TankShooting : MonoBehaviour
         yield return new WaitForSeconds(rapidfireShoot3Cooldown);
         //Fire();
         //yield return new WaitForSeconds(0.4f);
-        //Fire();
     }
 
     private void Fire()
