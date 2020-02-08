@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2623503371865247586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0875}
+  m_LocalPosition: {x: 0, y: 0, z: 0.095}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5717617456688697387}
@@ -9547,9 +9547,10 @@ GameObject:
   - component: {fileID: 5717617456688697387}
   - component: {fileID: 1027218463348750580}
   - component: {fileID: 5852614205787739303}
-  m_Layer: 0
+  - component: {fileID: 1446679251362433989}
+  m_Layer: 8
   m_Name: TankTurret
-  m_TagString: Untagged
+  m_TagString: Players
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9618,6 +9619,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1446679251362433989
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4964913388850633793}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.026060358, y: 0.003785109, z: 0.013159049}
+  m_Center: {x: -0.00009086193, y: 0.0032641394, z: 0.05808361}
 --- !u!1 &5232264223260055698
 GameObject:
   m_ObjectHideFlags: 0
@@ -9861,8 +9875,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1414188, y: 1.516856, z: 1.2271467}
-  m_Center: {x: 0.0025193554, y: 0.2882465, z: 0.06932084}
+  m_Size: {x: 1.7185674, y: 1.4879981, z: 2.3558106}
+  m_Center: {x: 0.0025195342, y: 0.2918536, z: -0.001450777}
 --- !u!54 &5105829712570812519
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9923,7 +9937,7 @@ MonoBehaviour:
   m_ShootParticle: {fileID: 456713704676824583, guid: bac1c3fb787388e488bc1683ed420c5a,
     type: 3}
   projectileSpeed: 30
-  setShootCooldown: 2
+  setShootCooldown: 1
   rapidfireShoot1Cooldown: 0.1
   rapidfireShoot2Cooldown: 0.2
   rapidfireShoot3Cooldown: 0.3
