@@ -296,6 +296,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1697605455694896688, guid: a8a755fe11e82884195f5545e41865dd,
+        type: 3}
+      propertyPath: m_Name
+      value: SpeedBoost IMAGE P3
+      objectReference: {fileID: 0}
     - target: {fileID: 3012574680018518367, guid: a8a755fe11e82884195f5545e41865dd,
         type: 3}
       propertyPath: m_Sprite
@@ -412,6 +417,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8967584816418801259, guid: a8a755fe11e82884195f5545e41865dd,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: af1568379ce88b848a1c9b51c48d9c73,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8a755fe11e82884195f5545e41865dd, type: 3}
 --- !u!224 &86792436 stripped
@@ -2038,6 +2049,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2777664236940992640, guid: 813985a63210c6348a62490ca0a9c127,
+        type: 3}
+      propertyPath: m_Name
+      value: PenShot IMAGE P2
+      objectReference: {fileID: 0}
     - target: {fileID: 5416665706730096204, guid: 813985a63210c6348a62490ca0a9c127,
         type: 3}
       propertyPath: m_Name
@@ -2048,6 +2064,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5580073334517627099, guid: 813985a63210c6348a62490ca0a9c127,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9fc09ca0305266e45b073f6fe20dc898,
+        type: 3}
     - target: {fileID: 8198003240295927325, guid: 813985a63210c6348a62490ca0a9c127,
         type: 3}
       propertyPath: m_Sprite
@@ -2709,6 +2731,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4440819347713637621, guid: 6ac2c83deb6b57748b28c01d2968c47f,
+        type: 3}
+      propertyPath: m_Name
+      value: SpeedBoost IMAGE P4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223038318478025902, guid: 6ac2c83deb6b57748b28c01d2968c47f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: af1568379ce88b848a1c9b51c48d9c73,
+        type: 3}
     - target: {fileID: 6886326003718901297, guid: 6ac2c83deb6b57748b28c01d2968c47f,
         type: 3}
       propertyPath: m_Sprite
@@ -3349,7 +3382,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0.1484375, z: 0.02734375, w: -0.0390625}
+  m_BoundingSphereOverride: {x: 4.504e-42, y: 1.05e-43, z: NaN, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -6040,6 +6073,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1697605455694896688, guid: a8a755fe11e82884195f5545e41865dd,
+        type: 3}
+      propertyPath: m_Name
+      value: PenShot IMAGE P3
+      objectReference: {fileID: 0}
     - target: {fileID: 3012574680018518367, guid: a8a755fe11e82884195f5545e41865dd,
         type: 3}
       propertyPath: m_Sprite
@@ -6156,6 +6194,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8967584816418801259, guid: a8a755fe11e82884195f5545e41865dd,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9fc09ca0305266e45b073f6fe20dc898,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8a755fe11e82884195f5545e41865dd, type: 3}
 --- !u!224 &1322021230 stripped
@@ -7813,6 +7857,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2777664236940992640, guid: 813985a63210c6348a62490ca0a9c127,
+        type: 3}
+      propertyPath: m_Name
+      value: SpeedBoost IMAGE P2
+      objectReference: {fileID: 0}
     - target: {fileID: 5416665706730096204, guid: 813985a63210c6348a62490ca0a9c127,
         type: 3}
       propertyPath: m_Name
@@ -7823,6 +7872,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5580073334517627099, guid: 813985a63210c6348a62490ca0a9c127,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: af1568379ce88b848a1c9b51c48d9c73,
+        type: 3}
     - target: {fileID: 8198003240295927325, guid: 813985a63210c6348a62490ca0a9c127,
         type: 3}
       propertyPath: m_Sprite
@@ -9823,35 +9878,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 2053641105}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb5e107646c3d6c4aa6f059f79e5c47d, type: 3}
+  m_Script: {fileID: 11500000, guid: 75bf494745aa1c5419ff68fb0c329281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_NumRoundsToWin: 3
   m_StartDelay: 3
   m_EndDelay: 3
   m_MessageText: {fileID: 728077254}
-  m_TankPrefab: {fileID: 5232264223260055698, guid: 4cef816d0096236469ddd817860aa9fb,
+  m_TankPrefab: {fileID: 3909854706722402322, guid: 1a19f58763e6c0b4683cb51d0b9a0c11,
     type: 3}
   m_Tanks:
-  - m_PlayerColor: {r: 0.11347453, g: 0.24999996, b: 0.9622642, a: 0}
+  - m_PlayerColor: {r: 0, g: 0, b: 0, a: 0}
     m_SpawnPoint: {fileID: 45142643}
     m_PlayerNumber: 0
     m_ColoredPlayerText: 
     m_Instance: {fileID: 0}
     m_Wins: 0
-  - m_PlayerColor: {r: 0.90588236, g: 0.082352914, b: 0.10812748, a: 0}
+  - m_PlayerColor: {r: 0, g: 0, b: 0, a: 0}
     m_SpawnPoint: {fileID: 1458735898}
     m_PlayerNumber: 0
     m_ColoredPlayerText: 
     m_Instance: {fileID: 0}
     m_Wins: 0
-  - m_PlayerColor: {r: 0.082352914, g: 0.90588236, b: 0.21182263, a: 0}
+  - m_PlayerColor: {r: 0, g: 0, b: 0, a: 0}
     m_SpawnPoint: {fileID: 1791265099}
     m_PlayerNumber: 0
     m_ColoredPlayerText: 
     m_Instance: {fileID: 0}
     m_Wins: 0
-  - m_PlayerColor: {r: 0.96933126, g: 1, b: 0, a: 0}
+  - m_PlayerColor: {r: 0, g: 0, b: 0, a: 0}
     m_SpawnPoint: {fileID: 738732703}
     m_PlayerNumber: 0
     m_ColoredPlayerText: 
@@ -10030,6 +10085,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4440819347713637621, guid: 6ac2c83deb6b57748b28c01d2968c47f,
+        type: 3}
+      propertyPath: m_Name
+      value: PenShot IMAGE P4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223038318478025902, guid: 6ac2c83deb6b57748b28c01d2968c47f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9fc09ca0305266e45b073f6fe20dc898,
+        type: 3}
     - target: {fileID: 6886326003718901297, guid: 6ac2c83deb6b57748b28c01d2968c47f,
         type: 3}
       propertyPath: m_Sprite
