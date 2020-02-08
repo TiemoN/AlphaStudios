@@ -5214,4 +5214,4 @@ MonoBehaviour:
   m_BounceParticles: {fileID: 598289774218362627, guid: b944611ad6c06cf4785b9591fdba931e,
     type: 3}
   m_BounceAudio: {fileID: 4872943246464918296}
-  shellDamage: 50
+  shellDamage: 75

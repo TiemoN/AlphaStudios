@@ -9888,25 +9888,25 @@ MonoBehaviour:
   m_TankPrefab: {fileID: 3909854706722402322, guid: 1a19f58763e6c0b4683cb51d0b9a0c11,
     type: 3}
   m_Tanks:
-  - m_PlayerColor: {r: 0, g: 0, b: 0, a: 0}
+  - m_PlayerColor: {r: 0.9622642, g: 0.040850822, b: 0.040850822, a: 0}
     m_SpawnPoint: {fileID: 45142643}
     m_PlayerNumber: 0
     m_ColoredPlayerText: 
     m_Instance: {fileID: 0}
     m_Wins: 0
-  - m_PlayerColor: {r: 0, g: 0, b: 0, a: 0}
+  - m_PlayerColor: {r: 0.754717, g: 0.18155926, b: 0.57473636, a: 0}
     m_SpawnPoint: {fileID: 1458735898}
     m_PlayerNumber: 0
     m_ColoredPlayerText: 
     m_Instance: {fileID: 0}
     m_Wins: 0
-  - m_PlayerColor: {r: 0, g: 0, b: 0, a: 0}
+  - m_PlayerColor: {r: 0, g: 1, b: 0.8282523, a: 0}
     m_SpawnPoint: {fileID: 1791265099}
     m_PlayerNumber: 0
     m_ColoredPlayerText: 
     m_Instance: {fileID: 0}
     m_Wins: 0
-  - m_PlayerColor: {r: 0, g: 0, b: 0, a: 0}
+  - m_PlayerColor: {r: 0.7924528, g: 0.50462794, b: 0.7594974, a: 0}
     m_SpawnPoint: {fileID: 738732703}
     m_PlayerNumber: 0
     m_ColoredPlayerText: 

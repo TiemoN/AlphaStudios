@@ -12,14 +12,14 @@ public class TankManager
     [HideInInspector] public int m_Wins;
 
 
-    private TankMovement m_Movement;
-    private TankShooting m_Shooting;
+    private TankMovement2 m_Movement;
+    private TankShooting2 m_Shooting;
     private GameObject m_CanvasGameObject;                   
 
     public void Setup()
     {
-        m_Movement = m_Instance.GetComponent<TankMovement>();
-        m_Shooting = m_Instance.GetComponent<TankShooting>();
+        m_Movement = m_Instance.GetComponent<TankMovement2>();
+        m_Shooting = m_Instance.GetComponent<TankShooting2>();
         m_CanvasGameObject = m_Instance.GetComponentInChildren<Canvas>().gameObject;
 
         // Set the player numbers to be consistent across the scripts.

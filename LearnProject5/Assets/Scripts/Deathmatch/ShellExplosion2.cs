@@ -15,8 +15,8 @@ public class ShellExplosion2 : MonoBehaviour
     [Range(0, 100)]
     public float shellDamage = 100f;
     private float m_ExplosionForce = 1000f;
-    private float m_MaxLifeTime = 20f;
-    private float m_ExplosionRadius = 3f;
+    private float m_MaxLifeTime = 10f;
+    private float m_ExplosionRadius = 5f;
     private int speed; //Check warum es diese Varibale gibt bei void Start.
     bool bounce;
 
@@ -42,7 +42,7 @@ public class ShellExplosion2 : MonoBehaviour
 
                 targetRigidbody.AddExplosionForce(m_ExplosionForce, transform.position, m_ExplosionRadius);
 
-                TankHealth targetHealth = targetRigidbody.GetComponent<TankHealth>();
+                TankHealth2 targetHealth = targetRigidbody.GetComponent<TankHealth2>();
 
                 if (!targetHealth)
                     continue;

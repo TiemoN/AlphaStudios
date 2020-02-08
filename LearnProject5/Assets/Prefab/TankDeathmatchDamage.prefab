@@ -246,7 +246,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 3dcae848cb64a1b499f75de155b9c15d, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -355,8 +355,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 3dcae848cb64a1b499f75de155b9c15d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -647,9 +647,9 @@ MonoBehaviour:
   rb: {fileID: 4036819177722241255}
   SpeedBoostSound: {fileID: 3217641552991576094}
   tankSpeed: 10
-  boostSpeed: 20
-  tankRotationSpeed: 0
-  turretTurnSpeed: 0
+  boostSpeed: 17.5
+  tankRotationSpeed: 10
+  turretTurnSpeed: 10
   powerUpCount: 3
 --- !u!114 &1487130710992297954
 MonoBehaviour:
@@ -687,7 +687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd20dd20902c8a6438d37ea3928f5def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ExplosionPrefab: {fileID: 767878436299242598, guid: fb4895a1c231d9940acd231de30f91e5,
+  m_ExplosionPrefab: {fileID: 4430130037600731494, guid: 3c92f73184b76ac4eac100352a025da4,
     type: 3}
   m_Slider: {fileID: 8770885716570047657}
   m_FillImage: {fileID: 8437076562983501929}
@@ -10419,7 +10419,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8818362604158596139}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3420501248709132006}
@@ -10428,7 +10428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.1}
+  m_AnchoredPosition: {x: 0, y: -0.5}
   m_SizeDelta: {x: 3.5, y: 3.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4314818680268450945
