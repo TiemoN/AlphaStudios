@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Open1vs1 : MonoBehaviour
+public class OpenDOHKLoadingScreen : MonoBehaviour
 {
     public AudioSource ScrollingSound;
 
-    public void PlayGame()
+    public void LoadLS()
     {
         ScrollingSound.Play();
 
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene(1);
     }
 }

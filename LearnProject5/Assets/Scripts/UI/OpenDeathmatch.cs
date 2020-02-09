@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Open1vs1 : MonoBehaviour
+public class OpenDeathmatch : MonoBehaviour
 {
     public AudioSource ScrollingSound;
 
@@ -11,6 +11,6 @@ public class Open1vs1 : MonoBehaviour
     {
         ScrollingSound.Play();
 
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene(6);
     }
 }
