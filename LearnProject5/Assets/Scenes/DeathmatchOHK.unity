@@ -297,6 +297,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1697605455694896688, guid: a8a755fe11e82884195f5545e41865dd,
+        type: 3}
+      propertyPath: m_Name
+      value: SpeedBoost IMAGE P3
+      objectReference: {fileID: 0}
     - target: {fileID: 3012574680018518367, guid: a8a755fe11e82884195f5545e41865dd,
         type: 3}
       propertyPath: m_Sprite
@@ -413,6 +418,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8967584816418801259, guid: a8a755fe11e82884195f5545e41865dd,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: af1568379ce88b848a1c9b51c48d9c73,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8a755fe11e82884195f5545e41865dd, type: 3}
 --- !u!224 &86792436 stripped
@@ -2046,6 +2057,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2777664236940992640, guid: 813985a63210c6348a62490ca0a9c127,
+        type: 3}
+      propertyPath: m_Name
+      value: PenShot IMAGE P2
+      objectReference: {fileID: 0}
     - target: {fileID: 5416665706730096204, guid: 813985a63210c6348a62490ca0a9c127,
         type: 3}
       propertyPath: m_Name
@@ -2056,6 +2072,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5580073334517627099, guid: 813985a63210c6348a62490ca0a9c127,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9fc09ca0305266e45b073f6fe20dc898,
+        type: 3}
     - target: {fileID: 8198003240295927325, guid: 813985a63210c6348a62490ca0a9c127,
         type: 3}
       propertyPath: m_Sprite
@@ -2717,6 +2739,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4440819347713637621, guid: 6ac2c83deb6b57748b28c01d2968c47f,
+        type: 3}
+      propertyPath: m_Name
+      value: SpeedBoost IMAGE P4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223038318478025902, guid: 6ac2c83deb6b57748b28c01d2968c47f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: af1568379ce88b848a1c9b51c48d9c73,
+        type: 3}
     - target: {fileID: 6886326003718901297, guid: 6ac2c83deb6b57748b28c01d2968c47f,
         type: 3}
       propertyPath: m_Sprite
@@ -6054,6 +6087,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1697605455694896688, guid: a8a755fe11e82884195f5545e41865dd,
+        type: 3}
+      propertyPath: m_Name
+      value: PenShot IMAGE P3
+      objectReference: {fileID: 0}
     - target: {fileID: 3012574680018518367, guid: a8a755fe11e82884195f5545e41865dd,
         type: 3}
       propertyPath: m_Sprite
@@ -6170,6 +6208,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8967584816418801259, guid: a8a755fe11e82884195f5545e41865dd,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9fc09ca0305266e45b073f6fe20dc898,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8a755fe11e82884195f5545e41865dd, type: 3}
 --- !u!224 &1322021230 stripped
@@ -7832,6 +7876,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2777664236940992640, guid: 813985a63210c6348a62490ca0a9c127,
+        type: 3}
+      propertyPath: m_Name
+      value: SpeedBoost IMAGE P2
+      objectReference: {fileID: 0}
     - target: {fileID: 5416665706730096204, guid: 813985a63210c6348a62490ca0a9c127,
         type: 3}
       propertyPath: m_Name
@@ -7842,6 +7891,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5580073334517627099, guid: 813985a63210c6348a62490ca0a9c127,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: af1568379ce88b848a1c9b51c48d9c73,
+        type: 3}
     - target: {fileID: 8198003240295927325, guid: 813985a63210c6348a62490ca0a9c127,
         type: 3}
       propertyPath: m_Sprite
@@ -9977,6 +10032,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4440819347713637621, guid: 6ac2c83deb6b57748b28c01d2968c47f,
+        type: 3}
+      propertyPath: m_Name
+      value: PenShot IMAGE P4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223038318478025902, guid: 6ac2c83deb6b57748b28c01d2968c47f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9fc09ca0305266e45b073f6fe20dc898,
+        type: 3}
     - target: {fileID: 6886326003718901297, guid: 6ac2c83deb6b57748b28c01d2968c47f,
         type: 3}
       propertyPath: m_Sprite
