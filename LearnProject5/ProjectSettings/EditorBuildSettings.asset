@@ -35,4 +35,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameEndingScreenDOHK.unity
     guid: ce167d7bfcdb5fc45ac2d51a591afb4c
+  - enabled: 1
+    path: Assets/Scenes/GameEndingScreenD.unity
+    guid: c0e015982319acf4bb76ac73f27e28c4
+  - enabled: 1
+    path: Assets/Scenes/GameEndingScreen1vs1OHK.unity
+    guid: fd803c5f901344d46bfa6a651cbeef34
+  - enabled: 1
+    path: Assets/Scenes/GameEndingScreen1vs1.unity
+    guid: f1c206e0b489d934892b3b5f25033ec7
   m_configObjects: {}

@@ -65,14 +65,14 @@ public class PauseMenu : MonoBehaviour
     public void Restart()
     {
         ScrollingSound.Play();
-        SceneManager.LoadScene("Deathmatch");
+        SceneManager.LoadScene(5);
         Time.timeScale = 1f;
     }
 
     public void LoadMenu()
     {
         ScrollingSound.Play();
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene(0);
         Time.timeScale = 1f;
     }
 

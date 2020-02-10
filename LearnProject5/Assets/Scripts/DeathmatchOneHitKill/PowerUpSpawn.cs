@@ -50,7 +50,7 @@ public class PowerUpSpawn : MonoBehaviour
     public void SpawnPowerUp()
     {
         isRoundEnded = false;
-        //Invoke("DLSpawnPowerUp", m_StartDelay);
+       
         StartCoroutine(TriggerSpawn(m_StartDelay));
     }
 
@@ -98,7 +98,6 @@ public class PowerUpSpawn : MonoBehaviour
         SpawnPowerUp(roQuadrant, maximumCountOfItemsPerDraw);
         SpawnPowerUp(ruQuadrant, maximumCountOfItemsPerDraw);
     }
-
 }
 
 

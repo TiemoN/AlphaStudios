@@ -1714,7 +1714,7 @@ GameObject:
   - component: {fileID: 1152294921}
   - component: {fileID: 1152294920}
   m_Layer: 5
-  m_Name: DeathmatchB
+  m_Name: 1vs1OHKB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1784,7 +1784,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1452395309}
+      - m_Target: {fileID: 1452395308}
         m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
@@ -1957,7 +1957,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1452395304}
+      - m_Target: {fileID: 1452395307}
         m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
@@ -2330,7 +2330,7 @@ GameObject:
   - component: {fileID: 1933575919}
   - component: {fileID: 1933575918}
   m_Layer: 5
-  m_Name: 1vs1OHKB
+  m_Name: DeathmatchOHKB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2400,7 +2400,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1452395308}
+      - m_Target: {fileID: 1452395304}
         m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
@@ -2533,7 +2533,7 @@ GameObject:
   - component: {fileID: 2139835590}
   - component: {fileID: 2139835589}
   m_Layer: 5
-  m_Name: 1vs1B
+  m_Name: DeathmatchB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2603,7 +2603,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1452395307}
+      - m_Target: {fileID: 1452395309}
         m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
