@@ -15,15 +15,17 @@ public class ShellExplosion : MonoBehaviour
     [Range(0,100)]
     public float shellDamage = 100f;                   
     private float m_ExplosionForce = 1000f;              
-    private float m_MaxLifeTime = 20f;                    
+    private float m_MaxLifeTime = 10f;                    
     private float m_ExplosionRadius = 3f;                
     private int speed; //Check warum es diese Varibale gibt bei void Start.
     bool bounce;
-
+    private int timesBounced;
+    public int bounceQuantity = 4;
     private void Start()
     {
         Destroy(gameObject, m_MaxLifeTime);
         bounce = false;
+        timesBounced = 0;
         rb.AddRelativeForce(Vector3.forward * speed);
     }
 
@@ -58,12 +60,16 @@ public class ShellExplosion : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         m_BounceAudio.Play();
-        
+        timesBounced++;
+
         if (bounce)
         {
             m_BounceParticles = Instantiate(m_BounceParticles, transform.position, Quaternion.Euler(-90f, 0f, 0f));
-            
-            Destroy(this.gameObject);
+
+            if (timesBounced >= bounceQuantity)
+            {
+                Destroy(this.gameObject);
+            }
         }            
         bounce = true;
     }

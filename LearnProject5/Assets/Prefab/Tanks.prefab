@@ -9682,7 +9682,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: aa86514119fc51d4691e475a1ffe8221, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 57cd6548345fde54ab84722b78d35114, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -9937,10 +9937,11 @@ MonoBehaviour:
   m_ShootParticle: {fileID: 456713704676824583, guid: bac1c3fb787388e488bc1683ed420c5a,
     type: 3}
   projectileSpeed: 30
-  setShootCooldown: 0.25
-  rapidfireShoot1Cooldown: 0.1
-  rapidfireShoot2Cooldown: 0.2
-  rapidfireShoot3Cooldown: 0.3
+  setShootCooldown: 4
+  rapidfireShoot1Cooldown: 0.25
+  rapidfireShoot2Cooldown: 0.25
+  rapidfireShoot3Cooldown: 0.5
+  cooldown: 0
 --- !u!114 &57649564753193645
 MonoBehaviour:
   m_ObjectHideFlags: 0

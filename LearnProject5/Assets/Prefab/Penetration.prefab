@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 8264143378438919726}
   m_Layer: 11
   m_Name: Penetration
-  m_TagString: Shell
+  m_TagString: Players
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

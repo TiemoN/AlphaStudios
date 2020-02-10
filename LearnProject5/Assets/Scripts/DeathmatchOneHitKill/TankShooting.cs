@@ -24,8 +24,18 @@ public class TankShooting : MonoBehaviour
     public float rapidfireShoot2Cooldown = 0.2f;
     [Range(0, 1)]
     public float rapidfireShoot3Cooldown = 0.3f;
-    //public float rapidfireShoot4Cooldown = 0.1f;
-    private float cooldown;
+    [HideInInspector] public float cooldown;
+
+    private Image[] bullet = new Image[4];
+
+    void Awake()
+    {
+
+        for (int i = 0; i < bullet.Length; i++)
+        {
+            bullet[i] = GameObject.Find("Bullet P" + (i + 1)).GetComponent<Image>();
+        }
+    }
 
     private void Start()
     {
@@ -47,7 +57,13 @@ public class TankShooting : MonoBehaviour
                 Fire();
                 m_ShootParticle = Instantiate(m_ShootParticle, m_FireTransform.position, m_FireTransform.rotation);
                 cooldown = setShootCooldown;
+                bullet[m_PlayerNumber - 1].enabled = false;
             }
+        }
+
+        if (cooldown <= 0 && !bullet[m_PlayerNumber - 1].enabled)
+        {
+            bullet[m_PlayerNumber -1].enabled = true;
         }
     }
 
@@ -61,7 +77,6 @@ public class TankShooting : MonoBehaviour
         Fire();
         yield return new WaitForSeconds(rapidfireShoot3Cooldown);
         //Fire();
-        //yield return new WaitForSeconds(0.4f);
     }
 
     private void Fire()

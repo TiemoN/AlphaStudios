@@ -16,7 +16,7 @@ public class ShellExplosion2 : MonoBehaviour
     public float shellDamage = 100f;
     private float m_ExplosionForce = 1000f;
     private float m_MaxLifeTime = 10f;
-    private float m_ExplosionRadius = 5f;
+    private float m_ExplosionRadius = 9f;
     private int speed; //Check warum es diese Varibale gibt bei void Start.
     bool bounce;
 

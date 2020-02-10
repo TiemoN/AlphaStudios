@@ -4905,9 +4905,9 @@ GameObject:
   - component: {fileID: 6099250447970513853}
   - component: {fileID: 5504629613933695544}
   - component: {fileID: 8264143378438919726}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shell
-  m_TagString: Shell
+  m_TagString: Players
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5215,3 +5215,4 @@ MonoBehaviour:
     type: 3}
   m_BounceAudio: {fileID: 7806382876077816638}
   shellDamage: 100
+  bounceQuantity: 4
