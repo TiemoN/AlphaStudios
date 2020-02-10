@@ -16,7 +16,7 @@ public class TankShooting : MonoBehaviour
     [Header("GAME DESIGN")]
     [Range(1,50)]
     public float projectileSpeed = 30f;
-    [Range(1,5)]
+    [Range(0,5)]
     public float setShootCooldown = 2f;
     [Range(0, 1)]
     public float rapidfireShoot1Cooldown = 0.1f;
