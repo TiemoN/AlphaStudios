@@ -462,6 +462,7 @@ MonoBehaviour:
     type: 3}
   m_BounceAudio: {fileID: 1554673322243592632}
   shellDamage: 100
+  bounceQuantity: 2
 --- !u!1 &2858395572633264264
 GameObject:
   m_ObjectHideFlags: 0

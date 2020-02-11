@@ -10010,7 +10010,7 @@ MonoBehaviour:
   m_StartDelay: 10
   powerUpSpawn: {fileID: 7559338134204718941, guid: e1425fdaeb90a88489372b5c6e326ac3,
     type: 3}
-  maximumCountOfItemsPerDraw: 2
+  maximumCountOfItemsPerDraw: 1
   loQuadrant:
   - {fileID: 1863182517}
   - {fileID: 922370220}

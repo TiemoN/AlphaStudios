@@ -49,7 +49,7 @@ public class GameManager2 : MonoBehaviour
 
         if (m_GameWinner != null)
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(10);
         }
         else
         {

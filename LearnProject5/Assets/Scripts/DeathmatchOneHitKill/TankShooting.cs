@@ -30,7 +30,6 @@ public class TankShooting : MonoBehaviour
 
     void Awake()
     {
-
         for (int i = 0; i < bullet.Length; i++)
         {
             bullet[i] = GameObject.Find("Bullet P" + (i + 1)).GetComponent<Image>();

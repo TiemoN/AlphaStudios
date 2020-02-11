@@ -21,8 +21,15 @@ public class ShellExplosion : MonoBehaviour
     bool bounce;
     private int timesBounced;
     public int bounceQuantity = 4;
+
+    [Header("Sound")]
+    //public AudioClip[] shot;
+    public AudioClip shot2;
     private void Start()
     {
+        //SceneAudioPlayer.Play(shot[Random.Range(0, shot.Length)]);
+        SceneAudioPlayer.Play(shot2);
+
         Destroy(gameObject, m_MaxLifeTime);
         bounce = false;
         timesBounced = 0;
@@ -53,7 +60,10 @@ public class ShellExplosion : MonoBehaviour
 
                 targetHealth.TakeDamage(damage);
             }
-            Destroy(gameObject);
+
+            //GetComponent<SphereCollider>().enabled = false;
+            //rb.velocity = Vector3.zero;
+            Destroy(gameObject/*, 3.0f*/);
         }
     }
 
