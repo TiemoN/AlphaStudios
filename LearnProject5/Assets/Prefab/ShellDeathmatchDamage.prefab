@@ -4905,9 +4905,9 @@ GameObject:
   - component: {fileID: 5126976478778622356}
   - component: {fileID: 6910229911119831057}
   - component: {fileID: 9110192851624114834}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShellDeathmatchDamage
-  m_TagString: Shell
+  m_TagString: Players
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -5313,7 +5313,4 @@ MonoBehaviour:
   m_BounceAudio: {fileID: 7806382876077816638}
   shellDamage: 100
   bounceQuantity: 2
-  shot:
-  - {fileID: 8300000, guid: 60e3164590e76024d9997a766c63f8bf, type: 3}
-  - {fileID: 8300000, guid: d5c14bae1e885e648b2c558fb79f81ac, type: 3}
-  - {fileID: 8300000, guid: 1b05bafb14487864596eb2e3bf63e903, type: 3}
+  shot2: {fileID: 8300000, guid: 60e3164590e76024d9997a766c63f8bf, type: 3}
