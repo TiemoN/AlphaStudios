@@ -12,9 +12,9 @@ public class TankMovement1vs1H : MonoBehaviour
     public int m_PlayerNumber = 1;
     public GameObject TankTurret, TankBody, TankCanon;
     public Rigidbody rb;
-    [Header("SFX:")]
+    [Header("SFX and VFX:")]
     public AudioSource SpeedBoostSound;
-    //public AudioSource MovementSound;
+    public ParticleSystem speedEffect;
     [Header("Tank Settings:")]
     [Header("GAME DESIGN")]
     [Range(1, 20)]
@@ -85,9 +85,6 @@ public class TankMovement1vs1H : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(newPos - transform.position);
             TankBody.transform.rotation = Quaternion.Slerp(TankBody.transform.rotation, targetRotation, turn);
             transform.position = newPos;
-
-            //if (MovementSound.isPlaying == false)
-            //MovementSound.Play();
         }
 
         if (Input.GetAxis("GPVerticalRight" + m_PlayerNumber) != 0 || Input.GetAxis("GPHorizontalRight" + m_PlayerNumber) != 0)
@@ -247,7 +244,7 @@ public class TankMovement1vs1H : MonoBehaviour
     IEnumerator Speedboost()
     {
         SpeedBoostSound.Play();
-
+        speedEffect = Instantiate(speedEffect, transform);
         tankSpeed = boostSpeed;
         yield return new WaitForSeconds(3);
         tankSpeed = 10f;

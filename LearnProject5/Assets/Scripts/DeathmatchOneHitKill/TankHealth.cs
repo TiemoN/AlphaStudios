@@ -6,7 +6,6 @@ public class TankHealth : MonoBehaviour
     [Header("Objects:")]
     [Header("ONLY PROGRAMMERS!!!")]
     public GameObject m_ExplosionPrefab;             
-   
     [Header("VFX and SFX:")]            
     private AudioSource m_ExplosionAudio;                 
     private ParticleSystem m_ExplosionParticles;     

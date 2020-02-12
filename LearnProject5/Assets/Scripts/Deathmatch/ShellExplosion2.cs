@@ -9,7 +9,8 @@ public class ShellExplosion2 : MonoBehaviour
     [Header("VFX and SFX:")]
     public ParticleSystem m_BounceParticles;
     public AudioSource m_BounceAudio;
-    //public AudioSource m_BounceDestroyAudio;
+    public AudioClip m_ShootAudio;
+    public AudioClip m_BounceDestroyAudio;
     [Header("Shell Damage Settings:")]
     [Header("WARNING: Dont touch in OneHitKill Mode. Let Damage on 100!!!")]
     [Range(0, 100)]
@@ -19,11 +20,16 @@ public class ShellExplosion2 : MonoBehaviour
     private float m_ExplosionRadius = 9f;
     private int speed; //Check warum es diese Varibale gibt bei void Start.
     bool bounce;
+    private int timesBounced;
+    public int bounceQuantity = 4;
 
     private void Start()
     {
+        SceneAudioPlayer.Play(m_ShootAudio);
+
         Destroy(gameObject, m_MaxLifeTime);
         bounce = false;
+        timesBounced = 0;
         rb.AddRelativeForce(Vector3.forward * speed);
     }
 
@@ -52,18 +58,25 @@ public class ShellExplosion2 : MonoBehaviour
                 targetHealth.TakeDamage(damage);
             }
             Destroy(gameObject);
+            m_BounceParticles = Instantiate(m_BounceParticles, transform.position, Quaternion.Euler(-90f, 0f, 0f));
+            SceneAudioPlayer.Play(m_BounceDestroyAudio);
         }
     }
 
     private void OnCollisionExit(Collision collision)
     {
         m_BounceAudio.Play();
+        timesBounced++;
 
         if (bounce)
         {
             m_BounceParticles = Instantiate(m_BounceParticles, transform.position, Quaternion.Euler(-90f, 0f, 0f));
 
-            Destroy(this.gameObject);
+            if (timesBounced >= bounceQuantity)
+            {
+                Destroy(this.gameObject);
+                SceneAudioPlayer.Play(m_BounceDestroyAudio);
+            }
         }
         bounce = true;
     }

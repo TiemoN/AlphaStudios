@@ -12,8 +12,9 @@ public class TankMovement : MonoBehaviour
     public int m_PlayerNumber = 1;
     public GameObject TankTurret, TankBody, TankCanon;
     public Rigidbody rb;
-    [Header("SFX:")]
+    [Header("SFX and VFX:")]
     public AudioSource SpeedBoostSound;
+    public ParticleSystem speedEffect;
     [Header("Tank Settings:")]
     [Header("GAME DESIGN")]
     [Range(1, 20)]
@@ -42,7 +43,7 @@ public class TankMovement : MonoBehaviour
     private Image uiPenShotLogo2;
     private Image uiPenShotLogo3;
     private Image uiPenShotLogo4;
-    public ParticleSystem speedEffect;
+ 
     private void Awake()
     {
         uiPowerUpLogo1 = GameObject.Find("RapidFire IMAGE P1").GetComponent<Image>();
@@ -62,7 +63,6 @@ public class TankMovement : MonoBehaviour
     }
     private void Start()
     {
-        
         if (!shootScript)
         {
             shootScript = GetComponent<TankShooting>();

@@ -12,9 +12,9 @@ public class TankMovement2 : MonoBehaviour
     public int m_PlayerNumber = 1;
     public GameObject TankTurret, TankBody, TankCanon;
     public Rigidbody rb;
-    [Header("SFX:")]
+    [Header("SFX and VFX:")]
     public AudioSource SpeedBoostSound;
-    //public AudioSource MovementSound;
+    public ParticleSystem speedEffect;
     [Header("Tank Settings:")]
     [Header("GAME DESIGN")]
     [Range(1, 20)]
@@ -257,7 +257,7 @@ public class TankMovement2 : MonoBehaviour
     IEnumerator Speedboost()
     {
         SpeedBoostSound.Play();
-
+        speedEffect = Instantiate(speedEffect, transform);
         tankSpeed = boostSpeed;
         yield return new WaitForSeconds(3);
         tankSpeed = 10f;

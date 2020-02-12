@@ -9842,7 +9842,7 @@ MonoBehaviour:
   m_ShootParticle: {fileID: 456713704676824583, guid: bac1c3fb787388e488bc1683ed420c5a,
     type: 3}
   projectileSpeed: 32
-  setShootCooldown: 1.25
+  setShootCooldown: 1.5
   rapidfireShoot1Cooldown: 0.25
   rapidfireShoot2Cooldown: 0.25
   rapidfireShoot3Cooldown: 0.5
