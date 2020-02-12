@@ -14,9 +14,9 @@ public class TankShooting1vs1 : MonoBehaviour
     public ParticleSystem m_ShootParticle;
     [Header("Shell Shoot Settings:")]
     [Header("GAME DESIGN")]
-    [Range(1, 50)]
+    [Range(0, 50)]
     public float projectileSpeed = 30f;
-    [Range(1, 5)]
+    [Range(0, 5)]
     public float setShootCooldown = 2f;
     [Range(0, 1)]
     public float rapidfireShoot1Cooldown = 0.1f;
@@ -24,8 +24,17 @@ public class TankShooting1vs1 : MonoBehaviour
     public float rapidfireShoot2Cooldown = 0.2f;
     [Range(0, 1)]
     public float rapidfireShoot3Cooldown = 0.3f;
-    //public float rapidfireShoot4Cooldown = 0.1f;
-    private float cooldown;
+    [HideInInspector] public float cooldown;
+
+    private Image[] bullet = new Image[4];
+
+    void Awake()
+    {
+        for (int i = 0; i < bullet.Length; i++)
+        {
+            bullet[i] = GameObject.Find("Bullet P" + (i + 1)).GetComponent<Image>();
+        }
+    }
 
     private void Start()
     {
@@ -47,7 +56,13 @@ public class TankShooting1vs1 : MonoBehaviour
                 Fire();
                 m_ShootParticle = Instantiate(m_ShootParticle, m_FireTransform.position, m_FireTransform.rotation);
                 cooldown = setShootCooldown;
+                bullet[m_PlayerNumber - 1].enabled = false;
             }
+        }
+
+        if (cooldown <= 0 && !bullet[m_PlayerNumber - 1].enabled)
+        {
+            bullet[m_PlayerNumber - 1].enabled = true;
         }
     }
 
@@ -60,8 +75,6 @@ public class TankShooting1vs1 : MonoBehaviour
         yield return new WaitForSeconds(rapidfireShoot2Cooldown);
         Fire();
         yield return new WaitForSeconds(rapidfireShoot3Cooldown);
-        //Fire();
-        //yield return new WaitForSeconds(0.4f);
     }
 
     private void Fire()

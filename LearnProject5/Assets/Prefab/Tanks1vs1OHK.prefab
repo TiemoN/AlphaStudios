@@ -486,9 +486,9 @@ GameObject:
   - component: {fileID: 8021459538666698047}
   - component: {fileID: 6992010162885269156}
   - component: {fileID: 3701887830258348158}
-  - component: {fileID: 9184655615068698655}
-  - component: {fileID: 337172605296775271}
-  - component: {fileID: 8451283656086459060}
+  - component: {fileID: 3568319764098616597}
+  - component: {fileID: 6015182400585901196}
+  - component: {fileID: 2951498918855015665}
   m_Layer: 8
   m_Name: Tanks1vs1OHK
   m_TagString: Players
@@ -830,7 +830,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &9184655615068698655
+--- !u!114 &3568319764098616597
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -839,10 +839,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4402425705995853963}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e662765a227d3d5419eb5529c1de9f85, type: 3}
+  m_Script: {fileID: 11500000, guid: 3cb5ffe0cebd36b44b83c6912af0a6bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootScript: {fileID: 337172605296775271}
+  shootScript: {fileID: 6015182400585901196}
   m_PlayerNumber: 1
   TankTurret: {fileID: 3558644288039232600}
   TankBody: {fileID: 1256848125389937172}
@@ -854,7 +854,7 @@ MonoBehaviour:
   tankRotationSpeed: 10
   turretTurnSpeed: 10
   powerUpCount: 3
---- !u!114 &337172605296775271
+--- !u!114 &6015182400585901196
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -863,12 +863,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4402425705995853963}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32e1c76427dce9e409b0808fbfb3c745, type: 3}
+  m_Script: {fileID: 11500000, guid: c1b982379310f064f9a412e90f785d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerNumber: 1
-  Shell: {fileID: 2726468532280999951, guid: e5929b4f45c312c4185c6b02c4ca37ec, type: 3}
-  penetrationShell: {fileID: 2726468532280999951, guid: 6db7934b9d2df4b4296d648ef75ec4d7,
+  Shell: {fileID: 2305146723053738761, guid: f1dbf35403667c642a56fc0fa651c73e, type: 3}
+  penetrationShell: {fileID: 253958832434512996, guid: 6bc43423cdf592e41a345133e81178a0,
     type: 3}
   m_FireTransform: {fileID: 6100727533286924148}
   m_ShootParticle: {fileID: 456713704676824583, guid: bac1c3fb787388e488bc1683ed420c5a,
@@ -879,7 +879,7 @@ MonoBehaviour:
   rapidfireShoot2Cooldown: 0.25
   rapidfireShoot3Cooldown: 0.5
   cooldown: 0
---- !u!114 &8451283656086459060
+--- !u!114 &2951498918855015665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -888,12 +888,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4402425705995853963}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75bc599c05560944ba3cb5daa9c26714, type: 3}
+  m_Script: {fileID: 11500000, guid: ff0832a78e9f8dc4588f52ddb90f7081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExplosionPrefab: {fileID: 4411272261129033815, guid: 6f4de1a41cca88345a21272772064280,
     type: 3}
-  tankLife: 1
+  tankLife: 0.1
 --- !u!1 &5903300085899966331
 GameObject:
   m_ObjectHideFlags: 0

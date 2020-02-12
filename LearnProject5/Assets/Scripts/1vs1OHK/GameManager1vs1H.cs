@@ -3,20 +3,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager1vs1 : MonoBehaviour
+public class GameManager1vs1H : MonoBehaviour
 {
     public int m_NumRoundsToWin = 5;
     public float m_StartDelay = 3f;
     public float m_EndDelay = 3f;
     public Text m_MessageText;
     public GameObject m_TankPrefab;
-    public TankManager1vs1[] m_Tanks;
+    public RoundManager1vs1H[] m_Tanks;
 
     private int m_RoundNumber;
     private WaitForSeconds m_StartWait;
     private WaitForSeconds m_EndWait;
-    private TankManager1vs1 m_RoundWinner;
-    private TankManager1vs1 m_GameWinner;
+    private RoundManager1vs1H m_RoundWinner;
+    private RoundManager1vs1H m_GameWinner;
 
     private void Start()
     {
@@ -49,7 +49,7 @@ public class GameManager1vs1 : MonoBehaviour
 
         if (m_GameWinner != null)
         {
-            SceneManager.LoadScene(12);
+            SceneManager.LoadScene(11);
         }
         else
         {
@@ -117,7 +117,7 @@ public class GameManager1vs1 : MonoBehaviour
         return numTanksLeft <= 1;
     }
 
-    private TankManager1vs1 GetRoundWinner()
+    private RoundManager1vs1H GetRoundWinner()
     {
         for (int i = 0; i < m_Tanks.Length; i++)
         {
@@ -127,7 +127,7 @@ public class GameManager1vs1 : MonoBehaviour
         return null;
     }
 
-    private TankManager1vs1 GetGameWinner()
+    private RoundManager1vs1H GetGameWinner()
     {
 
         for (int i = 0; i < m_Tanks.Length; i++)

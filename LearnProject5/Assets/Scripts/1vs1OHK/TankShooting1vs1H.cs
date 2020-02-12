@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class TankShooting : MonoBehaviour
+public class TankShooting1vs1H : MonoBehaviour
 {
     [Header("Objects:")]
     [Header("ONLY PROGRAMMER!!!")]
@@ -14,9 +14,9 @@ public class TankShooting : MonoBehaviour
     public ParticleSystem m_ShootParticle;
     [Header("Shell Shoot Settings:")]
     [Header("GAME DESIGN")]
-    [Range(0,50)]
+    [Range(0, 50)]
     public float projectileSpeed = 30f;
-    [Range(0,5)]
+    [Range(0, 5)]
     public float setShootCooldown = 2f;
     [Range(0, 1)]
     public float rapidfireShoot1Cooldown = 0.1f;
@@ -62,7 +62,7 @@ public class TankShooting : MonoBehaviour
 
         if (cooldown <= 0 && !bullet[m_PlayerNumber - 1].enabled)
         {
-            bullet[m_PlayerNumber -1].enabled = true;
+            bullet[m_PlayerNumber - 1].enabled = true;
         }
     }
 
@@ -80,7 +80,7 @@ public class TankShooting : MonoBehaviour
     private void Fire()
     {
         GameObject shootShell = Instantiate(Shell, m_FireTransform.position, m_FireTransform.rotation);
-        
+
         shootShell.GetComponent<Rigidbody>().velocity = projectileSpeed * m_FireTransform.forward;
     }
 
