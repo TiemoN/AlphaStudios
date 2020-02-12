@@ -27,7 +27,7 @@ public class TankMovement : MonoBehaviour
     [SerializeField] int powerUpCount = 3;
 
     int powerup = -1;
-
+    
     private Image uiPowerUpLogo1;
     private Image uiPowerUpLogo2;
     private Image uiPowerUpLogo3;
@@ -42,7 +42,7 @@ public class TankMovement : MonoBehaviour
     private Image uiPenShotLogo2;
     private Image uiPenShotLogo3;
     private Image uiPenShotLogo4;
-
+    public ParticleSystem speedEffect;
     private void Awake()
     {
         uiPowerUpLogo1 = GameObject.Find("RapidFire IMAGE P1").GetComponent<Image>();
@@ -62,6 +62,7 @@ public class TankMovement : MonoBehaviour
     }
     private void Start()
     {
+        
         if (!shootScript)
         {
             shootScript = GetComponent<TankShooting>();
@@ -256,7 +257,7 @@ public class TankMovement : MonoBehaviour
     IEnumerator Speedboost()
     {
         SpeedBoostSound.Play();
-
+        speedEffect = Instantiate(speedEffect, transform);
         tankSpeed = boostSpeed;
         yield return new WaitForSeconds(3);
         tankSpeed = 10f;

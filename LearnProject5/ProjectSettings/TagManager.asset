@@ -45,3 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: bubble
+    uniqueID: 365985815
+    locked: 0
+  - name: powerbox
+    uniqueID: 2632097123
+    locked: 0
