@@ -14,7 +14,6 @@ public class TankMovement : MonoBehaviour
     public Rigidbody rb;
     [Header("SFX:")]
     public AudioSource SpeedBoostSound;
-    //public AudioSource MovementSound;
     [Header("Tank Settings:")]
     [Header("GAME DESIGN")]
     [Range(1, 20)]
@@ -98,9 +97,6 @@ public class TankMovement : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(newPos - transform.position);
             TankBody.transform.rotation = Quaternion.Slerp(TankBody.transform.rotation, targetRotation, turn);
             transform.position = newPos;
-
-            //if (MovementSound.isPlaying == false)
-                //MovementSound.Play();
         }
 
         if (Input.GetAxis("GPVerticalRight" + m_PlayerNumber) != 0 || Input.GetAxis("GPHorizontalRight" + m_PlayerNumber) != 0)

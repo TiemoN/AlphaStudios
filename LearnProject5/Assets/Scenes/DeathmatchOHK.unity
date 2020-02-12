@@ -9538,16 +9538,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1113158375512237601, guid: bcdbee2637eefee4695721838616c525,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4053388596683618454, guid: bcdbee2637eefee4695721838616c525,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6660106069741404697, guid: bcdbee2637eefee4695721838616c525,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9607,21 +9597,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelArt
-      objectReference: {fileID: 0}
-    - target: {fileID: 7155705576910835486, guid: bcdbee2637eefee4695721838616c525,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7399551939764908236, guid: bcdbee2637eefee4695721838616c525,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8990222699553943865, guid: bcdbee2637eefee4695721838616c525,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcdbee2637eefee4695721838616c525, type: 3}
