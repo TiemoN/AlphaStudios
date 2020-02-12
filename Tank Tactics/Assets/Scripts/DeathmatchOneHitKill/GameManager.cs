@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     private RoundManager m_RoundWinner;
     private RoundManager m_GameWinner;
 
+    private TankMovement m_Movement;
+
     private void Start()
     {
         m_StartWait = new WaitForSeconds(m_StartDelay);
