@@ -9019,8 +9019,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2053641107}
-  - component: {fileID: 2053641106}
   - component: {fileID: 2053641108}
+  - component: {fileID: 2053641106}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -9047,13 +9047,13 @@ MonoBehaviour:
   m_TankPrefab: {fileID: 4113591191010008952, guid: ec174dea98d3b47409ba1a227f5fd698,
     type: 3}
   m_Tanks:
-  - m_PlayerColor: {r: 0, g: 1, b: 1, a: 0}
+  - m_PlayerColor: {r: 0, g: 1, b: 0.9604409, a: 0}
     m_SpawnPoint: {fileID: 855163038}
     m_PlayerNumber: 0
     m_ColoredPlayerText: 
     m_Instance: {fileID: 0}
     m_Wins: 0
-  - m_PlayerColor: {r: 1, g: 1, b: 0, a: 0}
+  - m_PlayerColor: {r: 0.9523721, g: 1, b: 0, a: 0}
     m_SpawnPoint: {fileID: 805595120}
     m_PlayerNumber: 0
     m_ColoredPlayerText: 

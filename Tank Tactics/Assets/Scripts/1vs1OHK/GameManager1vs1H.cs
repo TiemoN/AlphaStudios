@@ -19,7 +19,7 @@ public class GameManager1vs1H : MonoBehaviour
     private RoundManager1vs1H m_RoundWinner;
     private RoundManager1vs1H m_GameWinner;
 
-    private TankMovement m_Movement;
+    private TankMovement1vs1H m_Movement;
 
     private void Start()
     {
@@ -52,7 +52,7 @@ public class GameManager1vs1H : MonoBehaviour
 
         if (m_GameWinner != null)
         {
-            SceneManager.LoadScene(11);
+            SceneManager.LoadScene(9);
         }
         else
         {
@@ -68,6 +68,7 @@ public class GameManager1vs1H : MonoBehaviour
 
         m_RoundNumber++;
         m_MessageText.text = "ROUND " + m_RoundNumber;
+
 
         yield return m_StartWait;
     }
@@ -88,7 +89,6 @@ public class GameManager1vs1H : MonoBehaviour
     {
         DisableTankControl();
         GetComponent<PowerUpSpawn>().DestroyPowerUps();
-
 
         m_RoundWinner = null;
 

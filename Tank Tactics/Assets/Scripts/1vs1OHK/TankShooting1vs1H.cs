@@ -25,8 +25,7 @@ public class TankShooting1vs1H : MonoBehaviour
     [Range(0, 1)]
     public float rapidfireShoot3Cooldown = 0.3f;
     [HideInInspector] public float cooldown;
-
-    private Image[] bullet = new Image[2];
+    private Image[] bullet = new Image[4];
 
     void Awake()
     {
