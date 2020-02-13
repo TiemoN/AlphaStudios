@@ -9817,6 +9817,7 @@ MonoBehaviour:
   SpeedBoostSound: {fileID: -3280450919242921826}
   speedEffect: {fileID: 723653605235525215, guid: 147df786bfe8a0f43927c45c6a624935,
     type: 3}
+  destroyEffect: 5
   tankSpeed: 10
   boostSpeed: 17.5
   tankRotationSpeed: 10
@@ -9835,7 +9836,6 @@ MonoBehaviour:
   uiPenShotLogo2: {fileID: 0}
   uiPenShotLogo3: {fileID: 0}
   uiPenShotLogo4: {fileID: 0}
-  destroyEffect: 5
 --- !u!114 &8154280591567480958
 MonoBehaviour:
   m_ObjectHideFlags: 0

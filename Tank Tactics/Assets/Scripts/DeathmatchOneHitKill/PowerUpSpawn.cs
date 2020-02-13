@@ -45,6 +45,7 @@ public class PowerUpSpawn : MonoBehaviour
                 Destroy(children.gameObject);
             }
         }
+        Destroy(powerUpSpawn);
     }
 
     public void SpawnPowerUp()
