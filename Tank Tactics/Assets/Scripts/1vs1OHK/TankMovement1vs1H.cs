@@ -14,7 +14,8 @@ public class TankMovement1vs1H : MonoBehaviour
     public Rigidbody rb;
     [Header("SFX and VFX:")]
     public AudioSource SpeedBoostSound;
-    public ParticleSystem speedEffect;
+    public GameObject speedEffect;
+    public float destroyEffect = 5f;
     [Header("Tank Settings:")]
     [Header("GAME DESIGN")]
     [Range(1, 20)]
@@ -27,17 +28,17 @@ public class TankMovement1vs1H : MonoBehaviour
     public float turretTurnSpeed;
     [SerializeField] int powerUpCount = 3;
 
-    int powerup = -1;
+    [HideInInspector] public int powerup = -1;
 
-    private Image uiPowerUpLogo1;
-    private Image uiPowerUpLogo2;
+    [HideInInspector] public Image uiPowerUpLogo1;
+    [HideInInspector] public Image uiPowerUpLogo2;
 
-    private Image uiSpeedBoostLogo1;
-    private Image uiSpeedBoostLogo2;
+    [HideInInspector] public Image uiSpeedBoostLogo1;
+    [HideInInspector] public Image uiSpeedBoostLogo2;
 
-    private Image uiPenShotLogo1;
-    private Image uiPenShotLogo2;
-   
+    [HideInInspector] public Image uiPenShotLogo1;
+    [HideInInspector] public Image uiPenShotLogo2;
+
     private void Awake()
     {
         uiPowerUpLogo1 = GameObject.Find("RapidFire IMAGE P1").GetComponent<Image>();
@@ -46,7 +47,6 @@ public class TankMovement1vs1H : MonoBehaviour
         uiSpeedBoostLogo1 = GameObject.Find("SpeedBoost IMAGE P1").GetComponent<Image>();
         uiSpeedBoostLogo2 = GameObject.Find("SpeedBoost IMAGE P2").GetComponent<Image>();
        
-
         uiPenShotLogo1 = GameObject.Find("PenShot IMAGE P1").GetComponent<Image>();
         uiPenShotLogo2 = GameObject.Find("PenShot IMAGE P2").GetComponent<Image>();
        
@@ -113,14 +113,6 @@ public class TankMovement1vs1H : MonoBehaviour
                     {
                         uiSpeedBoostLogo2.gameObject.SetActive(false);
                     }
-                    else if (m_PlayerNumber == 3)
-                    {
-                       
-                    }
-                    else
-                    {
-                        
-                    }
                     break;
                 //RapidFire
                 case 1:
@@ -132,14 +124,6 @@ public class TankMovement1vs1H : MonoBehaviour
                     else if (m_PlayerNumber == 2)
                     {
                         uiPowerUpLogo2.gameObject.SetActive(false);
-                    }
-                    else if (m_PlayerNumber == 3)
-                    {
-                        
-                    }
-                    else
-                    {
-                        
                     }
                     break;
                 //PenShot   
@@ -153,14 +137,6 @@ public class TankMovement1vs1H : MonoBehaviour
                     else if (m_PlayerNumber == 2)
                     {
                         uiPenShotLogo2.gameObject.SetActive(false);
-                    }
-                    else if (m_PlayerNumber == 3)
-                    {
-                        
-                    }
-                    else
-                    {
-                        
                     }
                     break;
             }
@@ -190,14 +166,6 @@ public class TankMovement1vs1H : MonoBehaviour
                     {
                         uiSpeedBoostLogo2.gameObject.SetActive(true);
                     }
-                    else if (m_PlayerNumber == 3)
-                    {
-                        
-                    }
-                    else
-                    {
-                        
-                    }
                     break;
                 //RapidFire
                 case 1:
@@ -208,14 +176,6 @@ public class TankMovement1vs1H : MonoBehaviour
                     else if (m_PlayerNumber == 2)
                     {
                         uiPowerUpLogo2.gameObject.SetActive(true);
-                    }
-                    else if (m_PlayerNumber == 3)
-                    {
-                        
-                    }
-                    else
-                    {
-                       
                     }
                     break;
                 //PenShot   
@@ -228,14 +188,6 @@ public class TankMovement1vs1H : MonoBehaviour
                     {
                         uiPenShotLogo2.gameObject.SetActive(true);
                     }
-                    else if (m_PlayerNumber == 3)
-                    {
-                        
-                    }
-                    else
-                    {
-                       
-                    }
                     break;
             }
         }
@@ -244,7 +196,8 @@ public class TankMovement1vs1H : MonoBehaviour
     IEnumerator Speedboost()
     {
         SpeedBoostSound.Play();
-        speedEffect = Instantiate(speedEffect, transform);
+        GameObject speedSFX = Instantiate(speedEffect, transform);
+        Destroy(speedSFX, destroyEffect);
         tankSpeed = boostSpeed;
         yield return new WaitForSeconds(3);
         tankSpeed = 10f;

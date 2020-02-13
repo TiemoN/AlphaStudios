@@ -40,7 +40,6 @@ public class RoundManager
         }
     }
 
-
     // Used during the phases of the game where the player shouldn't be able to control their tank.
     public void DisableControl()
     {
@@ -52,8 +51,6 @@ public class RoundManager
 
     }
 
-
-
     // Used during the phases of the game where the player should be able to control their tank.
     public void EnableControl()
     {
@@ -62,7 +59,6 @@ public class RoundManager
 
         //m_CanvasGameObject.SetActive(true);
     }
-
 
     // Used at the start of each round to put the tank into it's default state.
     public void Reset()

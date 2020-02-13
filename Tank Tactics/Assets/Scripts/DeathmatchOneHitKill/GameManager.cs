@@ -2,13 +2,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public int m_NumRoundsToWin = 5;
     public float m_StartDelay = 3f;
     public float m_EndDelay = 3f;
-    public Text m_MessageText;
+    public TextMeshProUGUI m_MessageText;
     public GameObject m_TankPrefab;
     public RoundManager[] m_Tanks;
 
@@ -68,6 +69,7 @@ public class GameManager : MonoBehaviour
         m_RoundNumber++;
         m_MessageText.text = "ROUND " + m_RoundNumber;
 
+
         yield return m_StartWait;
     }
 
@@ -87,7 +89,6 @@ public class GameManager : MonoBehaviour
     {
         DisableTankControl();
         GetComponent<PowerUpSpawn>().DestroyPowerUps();
-
 
         m_RoundWinner = null;
 

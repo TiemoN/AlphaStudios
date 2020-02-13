@@ -25,7 +25,7 @@ public class TankShooting1vs1 : MonoBehaviour
     [Range(0, 1)]
     public float rapidfireShoot3Cooldown = 0.3f;
     [HideInInspector] public float cooldown;
-    private Image[] bullet = new Image[4];
+    private Image[] bullet = new Image[2];
 
     void Awake()
     {
@@ -47,6 +47,7 @@ public class TankShooting1vs1 : MonoBehaviour
 
     private void Update()
     {
+
         cooldown -= Time.deltaTime;
         if (Input.GetAxis("GPRightTrigger" + m_PlayerNumber) > 0)
         {
@@ -63,6 +64,7 @@ public class TankShooting1vs1 : MonoBehaviour
         {
             bullet[m_PlayerNumber - 1].enabled = true;
         }
+
     }
 
     public IEnumerator Multishot()

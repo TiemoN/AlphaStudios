@@ -2,13 +2,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager1vs1 : MonoBehaviour
 {
     public int m_NumRoundsToWin = 5;
     public float m_StartDelay = 3f;
     public float m_EndDelay = 3f;
-    public Text m_MessageText;
+    public TextMeshProUGUI m_MessageText;
     public GameObject m_TankPrefab;
     public TankManager1vs1[] m_Tanks;
 
@@ -17,6 +18,8 @@ public class GameManager1vs1 : MonoBehaviour
     private WaitForSeconds m_EndWait;
     private TankManager1vs1 m_RoundWinner;
     private TankManager1vs1 m_GameWinner;
+
+    private TankMovement1vs1 m_Movement;
 
     private void Start()
     {

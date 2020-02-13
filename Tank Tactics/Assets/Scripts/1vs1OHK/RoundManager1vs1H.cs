@@ -3,7 +3,6 @@ using UnityEngine;
 
 [Serializable]
 public class RoundManager1vs1H
-
 {
     public Color m_PlayerColor;
     public Transform m_SpawnPoint;
@@ -11,7 +10,6 @@ public class RoundManager1vs1H
     [HideInInspector] public string m_ColoredPlayerText;
     [HideInInspector] public GameObject m_Instance;
     [HideInInspector] public int m_Wins;
-
 
     private TankMovement1vs1H m_Movement;
     private TankShooting1vs1H m_Shooting;
@@ -41,7 +39,6 @@ public class RoundManager1vs1H
         }
     }
 
-
     // Used during the phases of the game where the player shouldn't be able to control their tank.
     public void DisableControl()
     {
@@ -50,7 +47,6 @@ public class RoundManager1vs1H
 
         //m_CanvasGameObject.SetActive(false);
     }
-
 
     // Used during the phases of the game where the player should be able to control their tank.
     public void EnableControl()
@@ -61,7 +57,6 @@ public class RoundManager1vs1H
         //m_CanvasGameObject.SetActive(true);
     }
 
-
     // Used at the start of each round to put the tank into it's default state.
     public void Reset()
     {
@@ -70,5 +65,43 @@ public class RoundManager1vs1H
 
         m_Instance.SetActive(false);
         m_Instance.SetActive(true);
+
+        switch (m_Movement.powerup)
+        {
+            //SpeedBoost
+            case 0:
+                if (m_PlayerNumber == 1)
+                {
+                    m_Movement.uiSpeedBoostLogo1.gameObject.SetActive(false);
+                }
+                else if (m_PlayerNumber == 2)
+                {
+                    m_Movement.uiSpeedBoostLogo2.gameObject.SetActive(false);
+                }
+                break;
+            //RapidFire
+            case 1:
+                if (m_PlayerNumber == 1)
+                {
+                    m_Movement.uiPowerUpLogo1.gameObject.SetActive(false);
+                }
+                else if (m_PlayerNumber == 2)
+                {
+                    m_Movement.uiPowerUpLogo2.gameObject.SetActive(false);
+                } 
+                break;
+            //PenShot   
+            case 2:
+                if (m_PlayerNumber == 1)
+                {
+                    m_Movement.uiPenShotLogo1.gameObject.SetActive(false);
+                }
+                else if (m_PlayerNumber == 2)
+                {
+                    m_Movement.uiPenShotLogo2.gameObject.SetActive(false);
+                }
+                break;
+        }
+        m_Movement.powerup = -1;
     }
 }

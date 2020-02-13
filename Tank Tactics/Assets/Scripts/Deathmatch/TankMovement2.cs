@@ -14,7 +14,8 @@ public class TankMovement2 : MonoBehaviour
     public Rigidbody rb;
     [Header("SFX and VFX:")]
     public AudioSource SpeedBoostSound;
-    public ParticleSystem speedEffect;
+    public GameObject speedEffect;
+    public float destroyEffect = 5f;
     [Header("Tank Settings:")]
     [Header("GAME DESIGN")]
     [Range(1, 20)]
@@ -27,22 +28,22 @@ public class TankMovement2 : MonoBehaviour
     public float turretTurnSpeed;
     [SerializeField] int powerUpCount = 3;
 
-    int powerup = -1;
+    [HideInInspector] public int powerup = -1;
 
-    private Image uiPowerUpLogo1;
-    private Image uiPowerUpLogo2;
-    private Image uiPowerUpLogo3;
-    private Image uiPowerUpLogo4;
+    [HideInInspector] public Image uiPowerUpLogo1;
+    [HideInInspector] public Image uiPowerUpLogo2;
+    [HideInInspector] public Image uiPowerUpLogo3;
+    [HideInInspector] public Image uiPowerUpLogo4;
 
-    private Image uiSpeedBoostLogo1;
-    private Image uiSpeedBoostLogo2;
-    private Image uiSpeedBoostLogo3;
-    private Image uiSpeedBoostLogo4;
+    [HideInInspector] public Image uiSpeedBoostLogo1;
+    [HideInInspector] public Image uiSpeedBoostLogo2;
+    [HideInInspector] public Image uiSpeedBoostLogo3;
+    [HideInInspector] public Image uiSpeedBoostLogo4;
 
-    private Image uiPenShotLogo1;
-    private Image uiPenShotLogo2;
-    private Image uiPenShotLogo3;
-    private Image uiPenShotLogo4;
+    [HideInInspector] public Image uiPenShotLogo1;
+    [HideInInspector] public Image uiPenShotLogo2;
+    [HideInInspector] public Image uiPenShotLogo3;
+    [HideInInspector] public Image uiPenShotLogo4;
 
     private void Awake()
     {
@@ -257,7 +258,8 @@ public class TankMovement2 : MonoBehaviour
     IEnumerator Speedboost()
     {
         SpeedBoostSound.Play();
-        speedEffect = Instantiate(speedEffect, transform);
+        GameObject speedSFX = Instantiate(speedEffect, transform);
+        Destroy(speedSFX, destroyEffect);
         tankSpeed = boostSpeed;
         yield return new WaitForSeconds(3);
         tankSpeed = 10f;

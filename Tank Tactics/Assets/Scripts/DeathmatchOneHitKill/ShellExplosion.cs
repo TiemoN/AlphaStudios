@@ -21,7 +21,7 @@ public class ShellExplosion : MonoBehaviour
     private int speed; //Check warum es diese Varibale gibt bei void Start.
     bool bounce;
     private int timesBounced;
-    public int bounceQuantity = 4;
+    public int bounceQuantity = 2;
 
     private void Start()
     {

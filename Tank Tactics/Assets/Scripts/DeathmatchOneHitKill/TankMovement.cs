@@ -14,7 +14,8 @@ public class TankMovement : MonoBehaviour
     public Rigidbody rb;
     [Header("SFX and VFX:")]
     public AudioSource SpeedBoostSound;
-    public ParticleSystem speedEffect;
+    public GameObject speedEffect;
+    public float destroyEffect = 5f;
     [Header("Tank Settings:")]
     [Header("GAME DESIGN")]
     [Range(1, 20)]
@@ -43,7 +44,7 @@ public class TankMovement : MonoBehaviour
     [HideInInspector] public Image uiPenShotLogo2;
     [HideInInspector] public Image uiPenShotLogo3;
     [HideInInspector] public Image uiPenShotLogo4;
- 
+
     private void Awake()
     {
         uiPowerUpLogo1 = GameObject.Find("RapidFire IMAGE P1").GetComponent<Image>();
@@ -257,7 +258,8 @@ public class TankMovement : MonoBehaviour
     IEnumerator Speedboost()
     {
         SpeedBoostSound.Play();
-        speedEffect = Instantiate(speedEffect, transform );
+        GameObject speedSFX = Instantiate(speedEffect, transform);
+        Destroy(speedSFX, destroyEffect);
         tankSpeed = boostSpeed;
         yield return new WaitForSeconds(3);
         tankSpeed = 10f;

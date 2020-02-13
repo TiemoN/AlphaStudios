@@ -9681,7 +9681,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 57cd6548345fde54ab84722b78d35114, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 61947c99b5c915e4ebfbc5e03b13448b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.67
   m_Pitch: 1
@@ -9815,13 +9815,27 @@ MonoBehaviour:
   TankCanon: {fileID: 2623503371865247586}
   rb: {fileID: 5105829712570812519}
   SpeedBoostSound: {fileID: -3280450919242921826}
+  speedEffect: {fileID: 723653605235525215, guid: 147df786bfe8a0f43927c45c6a624935,
+    type: 3}
   tankSpeed: 10
   boostSpeed: 17.5
   tankRotationSpeed: 10
   turretTurnSpeed: 10
   powerUpCount: 3
-  speedEffect: {fileID: 4299662859184594370, guid: 147df786bfe8a0f43927c45c6a624935,
-    type: 3}
+  powerup: -1
+  uiPowerUpLogo1: {fileID: 0}
+  uiPowerUpLogo2: {fileID: 0}
+  uiPowerUpLogo3: {fileID: 0}
+  uiPowerUpLogo4: {fileID: 0}
+  uiSpeedBoostLogo1: {fileID: 0}
+  uiSpeedBoostLogo2: {fileID: 0}
+  uiSpeedBoostLogo3: {fileID: 0}
+  uiSpeedBoostLogo4: {fileID: 0}
+  uiPenShotLogo1: {fileID: 0}
+  uiPenShotLogo2: {fileID: 0}
+  uiPenShotLogo3: {fileID: 0}
+  uiPenShotLogo4: {fileID: 0}
+  destroyEffect: 5
 --- !u!114 &8154280591567480958
 MonoBehaviour:
   m_ObjectHideFlags: 0
