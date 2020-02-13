@@ -259,9 +259,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Get Started with a free for all brawl, one hit, one kill.\noutplay all
-    of your opponents three rounds to claim victory. \nDecide whether or not if the
-    walls are companions or obstacles. collect items to power up your game and create
-    a bit of chaos."
+    of your opponents for three rounds to claim victory. \nDecide whether or not if
+    the walls are companions or obstacles. collect items to power up your game and
+    create a bit of chaos."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c688dbbdf0e7fac4c877cef36305fb3b, type: 2}
   m_sharedMaterial: {fileID: -8397621612106699319, guid: c688dbbdf0e7fac4c877cef36305fb3b,
@@ -331,10 +331,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 479833137}
-    characterCount: 246
+    characterCount: 250
     spriteCount: 0
-    spaceCount: 46
-    wordCount: 46
+    spaceCount: 47
+    wordCount: 47
     linkCount: 0
     lineCount: 8
     pageCount: 1

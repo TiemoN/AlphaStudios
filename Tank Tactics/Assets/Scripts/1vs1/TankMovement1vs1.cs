@@ -19,7 +19,7 @@ public class TankMovement1vs1 : MonoBehaviour
     [Header("Tank Settings:")]
     [Header("GAME DESIGN")]
     [Range(1, 20)]
-    public float tankSpeed = 10f;
+    public float tankSpeed = 15f;
     [Range(1, 30)]
     public float boostSpeed = 20f;
     [Range(1, 20)]
@@ -198,7 +198,7 @@ public class TankMovement1vs1 : MonoBehaviour
         Destroy(speedSFX, destroyEffect);
         tankSpeed = boostSpeed;
         yield return new WaitForSeconds(3);
-        tankSpeed = 10f;
+        tankSpeed = 15f;
     }
 }
 

@@ -1904,9 +1904,9 @@ MonoBehaviour:
 
     Having one enemy makes items even more important and dangerous.
 
-    outplay all of your opponents three rounds to claim victory.
+    outplay your opponent for three rounds to claim victory.
 
-    Collecet items to power up your game and create a bit of chaos.
+    Collect items to power up your game and create a bit of chaos.
 
 '
   m_isRightToLeft: 0
@@ -1978,10 +1978,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1336613178}
-    characterCount: 270
+    characterCount: 265
     spriteCount: 0
-    spaceCount: 47
-    wordCount: 47
+    spaceCount: 46
+    wordCount: 46
     linkCount: 0
     lineCount: 9
     pageCount: 1

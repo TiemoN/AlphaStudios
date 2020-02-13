@@ -571,9 +571,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "this mode allows you to give your friends a taste of your skills in a epic
-    1vs1 showdown. \nOutplay your rivals three rounds to claim victory.\ncollect items
-    to power up your game and create a bit of chaois.\n"
+  m_text: "This mode allows you to give your friends a taste of your skills in a epic
+    1vs1 showdown. \nOutplay your rival for three rounds to claim victory.\nCollect
+    items to power up your game and create a bit of chaos.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c688dbbdf0e7fac4c877cef36305fb3b, type: 2}
   m_sharedMaterial: {fileID: -8397621612106699319, guid: c688dbbdf0e7fac4c877cef36305fb3b,
@@ -643,10 +643,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 368780345}
-    characterCount: 206
+    characterCount: 208
     spriteCount: 0
-    spaceCount: 40
-    wordCount: 39
+    spaceCount: 41
+    wordCount: 40
     linkCount: 0
     lineCount: 7
     pageCount: 1

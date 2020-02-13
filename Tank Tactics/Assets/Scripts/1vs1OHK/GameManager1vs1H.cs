@@ -52,7 +52,7 @@ public class GameManager1vs1H : MonoBehaviour
 
         if (m_GameWinner != null)
         {
-            SceneManager.LoadScene(9);
+            SceneManager.LoadScene(11);
         }
         else
         {
