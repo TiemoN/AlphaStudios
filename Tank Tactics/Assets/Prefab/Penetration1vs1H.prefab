@@ -4981,7 +4981,7 @@ MonoBehaviour:
   m_BounceParticles: {fileID: 7371823207879240115, guid: 7c526b7eabb8d9544a70867c39e2bfeb,
     type: 3}
   m_BounceAudio: {fileID: 3729875216452408787}
-  m_ShootAudio: {fileID: 8300000, guid: 76bae15f0e284a04c82210b3b4f9e022, type: 3}
+  m_ShootAudio: {fileID: 8300000, guid: 6557777ebd5f49d4b990358bf9147774, type: 3}
   m_BounceDestroyAudio: {fileID: 8300000, guid: e01450da9704ac44fa1923ee2241c457,
     type: 3}
   shellDamage: 100
