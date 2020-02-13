@@ -10215,7 +10215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56ac17bae03b09243bf6911a2fdbf346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_StartDelay: 15
+  m_StartDelay: 12
   powerUpSpawn: {fileID: 7559338134204718941, guid: e1425fdaeb90a88489372b5c6e326ac3,
     type: 3}
   maximumCountOfItemsPerDraw: 1
